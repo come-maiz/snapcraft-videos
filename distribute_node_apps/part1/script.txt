@@ -1,0 +1,62 @@
+Snapcraft makes it easy to package and distribute your node applications to Linux users.
+
+If you don't already have the snapcraft command, you'll need to install it. Link in the description.
+
+First we’ll check the application name is available in the store, and register it for our use.
+
+snapcraft register wethr
+
+If the name is taken, don’t worry. Choose another one. Now we’ll create a template snapcraft yaml which we’ll edit to describe the application.
+
+snapcraft init
+
+Add in the metadata users will see when searching the store for your application. If you had to register a different name earlier, be sure to use it here.
+
+name: wethr
+version: master
+summary: Command line weather tool.
+description: |
+  Get current weather:-
+    $ wethr
+  Get current weather in metric units
+    $ wethr --metric
+  Get current weather in imperial units
+    $ wethr --imperial
+
+Now, add a part to describe how your application is built.
+
+parts:
+  wethr:
+    plugin: nodejs
+    source: https://github.com/twobucks/wethr.git
+
+
+We use the nodejs plugin. Snapcraft knows how to handle nodejs applications.
+
+We’ll start with devmode which means the application isn’t confined. We can tighten that up later.
+
+confinement: devmode
+grade: devel
+
+
+Finally we add an app stanza to define the commands contained in the snap.
+
+apps:
+  wethr:
+    command: wethr
+
+That’s it. Now we can create the snap with the snapcraft command.
+
+snapcraft
+
+Install and test the unsigned package locally with snap install
+
+snap install wethr_master_amd64.snap --dangerous --devmode
+
+..and push it to the store with snapcraft push...
+
+snapcraft push wethr_master_amd64.snap --release edge
+
+Great! Now you can tell your community to snap install --channel=edge --devmode wethr.
+
+Find out more at snapcraft dot io

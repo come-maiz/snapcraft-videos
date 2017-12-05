@@ -1,0 +1,44 @@
+In the previous video we snapped a nodejs application and pushed it to the edge channel in the store.
+
+Users will typically install releases of applications from the stable channel however.
+
+To land our snap in the stable channel, we need to make a couple of small changes.
+
+We need to set the grade to stable. The store will only allow snaps graded as stable into the stable channel.
+
+grade: stable
+
+Now we will switch to strict confinement.
+
+confinement: strict
+
+You can find out more about grades and confinement models in our documentation, linked in the video description.
+
+Now our application is securely confined, it will be cut off from the network. We can request network access to the ‘network’ interface via a plug, added to the command.
+
+apps:
+  wethr:
+    command: wethr
+    plugs: [network]
+
+The up to date list of plugs and what resources they allow access to, is in the snapcraft documentation, also linked below.
+
+That’s it, now we can rebuild the now-confined snap
+
+snapcraft
+
+Installing locally now no-longer requires the --devmode flag.
+
+snap install wethr_master_amd64.snap --dangerous
+
+Finally we can push to the beta channel and request our community test the snap
+
+snapcraft push wethr_master_amd64.snap --release beta
+
+or push directly to the stable channel..
+
+snapcraft push wethr_master_amd64.snap --release stable
+
+Great! Now you can tell the community to snap install wethr.
+
+Find out more at snapcraft dot io
