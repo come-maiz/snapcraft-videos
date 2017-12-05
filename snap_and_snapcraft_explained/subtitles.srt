@@ -1,0 +1,320 @@
+1
+00:00:01,480 --> 00:00:04,940
+Traditional methods of delivering software on Linux are problematic.
+
+2
+00:00:04,940 --> 00:00:07,460
+Packages write all over the file system.
+
+3
+00:00:07,520 --> 00:00:10,600
+They require complex code to manage installation and updates.
+
+4
+00:00:10,860 --> 00:00:12,140
+They are not transactional,
+
+5
+00:00:12,140 --> 00:00:14,640
+if they fail, the end-user is left to pick up the pieces.
+
+6
+00:00:15,460 --> 00:00:19,020
+Because this is also risky, updates have to be a manual operation.
+
+7
+00:00:19,500 --> 00:00:22,960
+At Ubuntu, we've built a platform that addresses these issues.
+
+8
+00:00:23,160 --> 00:00:26,000
+What we've called snaps and snapcraft.
+
+9
+00:00:26,260 --> 00:00:29,160
+It puts control over publishing in the hands of vendors,
+
+10
+00:00:29,300 --> 00:00:31,900
+giving tools to deliver updates at a high frequency
+
+11
+00:00:32,020 --> 00:00:34,520
+without risking the end-user experience.
+
+12
+00:00:34,820 --> 00:00:37,220
+These updates require no end user interaction,
+
+13
+00:00:37,240 --> 00:00:38,880
+even when they fail.
+
+14
+00:00:39,000 --> 00:00:43,040
+If you are building software to run on Ubuntu 14.04 or 16.04 today,
+
+15
+00:00:43,220 --> 00:00:45,060
+this is the best way to deliver it.
+
+16
+00:00:45,480 --> 00:00:48,380
+There are already well over a thousand such applications
+
+17
+00:00:48,460 --> 00:00:50,660
+available from hundreds of developers.
+
+18
+00:00:51,920 --> 00:00:53,920
+The format is simple and declarative.
+
+19
+00:00:53,920 --> 00:00:58,060
+Just three stanzas: metadata, confinement and build definition.
+
+20
+00:00:58,940 --> 00:01:01,940
+Plugins exist for popular build systems and languages.
+
+21
+00:01:02,540 --> 00:01:05,880
+It's easily extendable by adding shell commands in the yaml.
+
+22
+00:01:05,880 --> 00:01:08,960
+You can bundle your dependencies for predictable behavior.
+
+23
+00:01:09,240 --> 00:01:11,760
+Even for bigger pieces, like databases,
+
+24
+00:01:11,760 --> 00:01:16,020
+build definitions can equally just take pre-built binaries or artifacts.
+
+25
+00:01:16,440 --> 00:01:20,200
+We offer lots of generic foundational components you can build on top of,
+
+26
+00:01:20,360 --> 00:01:22,620
+such as a build farm and LXD clustering .
+
+27
+00:01:22,980 --> 00:01:27,520
+We also make the tools easier to integrate into your existing build and CI system.
+
+28
+00:01:28,260 --> 00:01:32,220
+Build once, publish once, run on many Linux systems.
+
+29
+00:01:32,220 --> 00:01:33,660
+This list is growing,
+
+30
+00:01:33,660 --> 00:01:36,040
+and support for building and testing from Windows and Mac
+
+31
+00:01:36,040 --> 00:01:37,920
+will land soon.
+
+32
+00:01:37,920 --> 00:01:42,120
+Snaps are like a container, but without the baggage of an OS image included.
+
+33
+00:01:42,540 --> 00:01:46,660
+That means you can even install snaps in lxd or docker containers.
+
+34
+00:01:47,120 --> 00:01:49,460
+The confinement model can be adjusted.
+
+35
+00:01:49,460 --> 00:01:52,160
+Need Internet access or access to hardware?
+
+36
+00:01:52,160 --> 00:01:54,340
+You can just add that to the yaml.
+
+37
+00:01:54,340 --> 00:01:58,080
+You  can even package editors and apps that need complete access to the file system
+
+38
+00:01:58,120 --> 00:02:02,400
+by changing one line of the yaml to what we call classic confinement.
+
+39
+00:02:03,040 --> 00:02:06,560
+Health checks let any update validate itself.
+
+40
+00:02:06,820 --> 00:02:08,740
+Users will automatically roll back,
+
+41
+00:02:08,740 --> 00:02:10,540
+and you can repoint the stable channel
+
+42
+00:02:10,540 --> 00:02:12,154
+at a previous revision.
+
+43
+00:02:12,220 --> 00:02:16,520
+End users can audit the transactions using the snap changes command.
+
+44
+00:02:16,520 --> 00:02:20,620
+Channels are a way for the end user to subscribe to a level of risk.
+
+45
+00:02:20,860 --> 00:02:23,600
+You can automatically land your CI builds on edge,
+
+46
+00:02:23,660 --> 00:02:25,800
+where your QA and developers can review.
+
+47
+00:02:26,160 --> 00:02:29,080
+You can promote these same changes to more stable channels
+
+48
+00:02:29,180 --> 00:02:30,260
+with a single command.
+
+49
+00:02:30,900 --> 00:02:33,300
+You can set up beta programs that when closed
+
+50
+00:02:33,300 --> 00:02:35,100
+move users back to stable.
+
+51
+00:02:35,800 --> 00:02:38,540
+No more long tail of releases to support.
+
+52
+00:02:38,540 --> 00:02:41,260
+Tracks let you introduce incompatible changes,
+
+53
+00:02:41,260 --> 00:02:43,240
+without breaking existing users.
+
+54
+00:02:43,520 --> 00:02:47,480
+Tracks can be named anything 2.0, 3.2 or banana.
+
+55
+00:02:48,040 --> 00:02:52,340
+Each track has its own stable, candidate, beta, and edge channels.
+
+56
+00:02:52,500 --> 00:02:55,100
+Systems update automatically four times a day,
+
+57
+00:02:55,100 --> 00:02:56,700
+or on user request.
+
+58
+00:02:56,700 --> 00:02:58,500
+Updates are delivered as deltas.
+
+59
+00:02:58,980 --> 00:03:01,820
+We're driving this from the IOT space, where you need to update
+
+60
+00:03:01,900 --> 00:03:03,960
+that smart fridge for security fixes,
+
+61
+00:03:03,960 --> 00:03:05,360
+but cannot risk bricking it.
+
+62
+00:03:05,800 --> 00:03:08,380
+Four times a day isn't fast enough for all cases.
+
+63
+00:03:08,380 --> 00:03:10,000
+Push updates are coming soon.
+
+64
+00:03:10,800 --> 00:03:14,340
+The kernel and base operating system are also delivered as snaps.
+
+65
+00:03:14,800 --> 00:03:17,140
+The kernel and OS roll back on failure,
+
+66
+00:03:17,140 --> 00:03:18,340
+just as applications do.
+
+67
+00:03:18,460 --> 00:03:21,220
+The system reboots back to a known good state.
+
+68
+00:03:21,700 --> 00:03:25,080
+Vendor code running on edge devices is tamper-proofed.
+
+69
+00:03:25,260 --> 00:03:27,920
+A great host for docker containers and,
+
+70
+00:03:27,920 --> 00:03:30,060
+just as is the case with other apps on the platform,
+
+71
+00:03:30,060 --> 00:03:33,600
+the docker snap is published directly by docker themselves.
+
+72
+00:03:33,860 --> 00:03:36,720
+Just as the cloud saves companies from data center planning,
+
+73
+00:03:36,880 --> 00:03:38,980
+we want update delivery to be solved
+
+74
+00:03:39,000 --> 00:03:42,340
+so people can get on with higher level differentiating tasks.
+
+75
+00:03:42,600 --> 00:03:43,820
+Your feedback is welcome.
+
+76
+00:03:43,820 --> 00:03:45,920
+Contact us if you have any questions or thoughts
+
+77
+00:03:45,960 --> 00:03:48,020
+on how we might better support you.
+
+78
+00:03:48,120 --> 00:03:49,300
+It's also open source.
+
+79
+00:03:49,520 --> 00:03:53,240
+You can get snapd and snapcraft on GitHub, if you want to contribute.
+
+80
+00:03:53,500 --> 00:03:57,440
+Find out more at snapcraft.io.
+

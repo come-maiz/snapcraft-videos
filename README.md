@@ -4,6 +4,7 @@ This repo contains resources related to the snapcraft videos.
 
 # Videos
 
+  * [Snaps and snapcraft.io explained in 3 minutes](snap_and_snapcraft_explained)
   * [Distribute node apps](distribute_node_apps)
 
 # License

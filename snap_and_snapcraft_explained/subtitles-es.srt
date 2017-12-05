@@ -1,0 +1,320 @@
+1
+00:00:01,480 --> 00:00:04,940
+Los métodos tradicionales para publicar software en Linux son problemáticos.
+
+2
+00:00:04,940 --> 00:00:07,460
+Los paquetes escriben por todo el sistema de archivos.
+
+3
+00:00:07,520 --> 00:00:10,600
+Requieren código complejo para manejar la instalación y actualizaciones.
+
+4
+00:00:10,860 --> 00:00:12,140
+No son transaccionales.
+
+5
+00:00:12,140 --> 00:00:14,640
+Si fallan, el usuario tiene que recoger las piezas.
+
+6
+00:00:15,460 --> 00:00:19,020
+Como esto también es riesgoso, las actualizaciones tienen que ser una operación manual.
+
+7
+00:00:19,500 --> 00:00:22,960
+En Ubuntu hemos construido una plataforma para solucionar estos problemas.
+
+8
+00:00:23,160 --> 00:00:26,000
+Es lo que hemos llamado snaps y snapcraft.
+
+9
+00:00:26,260 --> 00:00:29,160
+Ponemos el control sobre la publicación en manos de los proveedores de software,
+
+10
+00:00:29,300 --> 00:00:31,900
+dándoles herramientas para publicar actualizaciones con frecuencia
+
+11
+00:00:32,020 --> 00:00:34,520
+sin arriesgar la experiencia de usuario final.
+
+12
+00:00:34,820 --> 00:00:37,220
+Estas actualizaciones no requiren interacción del usuario,
+
+13
+00:00:37,240 --> 00:00:38,880
+aunque fallen.
+
+14
+00:00:39,000 --> 00:00:43,040
+Si está escribiendo software para ejecutar en Ubuntu 14.04 o 16.04 hoy,
+
+15
+00:00:43,220 --> 00:00:45,060
+esta es la mejor forma de publicarlo.
+
+16
+00:00:45,480 --> 00:00:48,380
+Ya hay más de mil aplicaciones de estas
+
+17
+00:00:48,460 --> 00:00:50,660
+disponibles gracias a cientos de desarrolladores.
+
+18
+00:00:51,920 --> 00:00:53,920
+El formato es simple y declarativo.
+
+19
+00:00:53,920 --> 00:00:58,060
+Sólo tres declaraciones: metadata, confinement y la definición para compilar el paquete.
+
+20
+00:00:58,940 --> 00:01:01,940
+Existen «plugins» para lenguajes y sistemas populares para producir ejecutables.
+
+21
+00:01:02,540 --> 00:01:05,880
+Es fácilmente extensible al agregar comandos de shell en el yaml.
+
+22
+00:01:05,880 --> 00:01:08,960
+Puede incluir sus dependencias para obtener un comportamiento predecible.
+
+23
+00:01:09,240 --> 00:01:11,760
+Incluso para piezas grandes, como bases de datos,
+
+24
+00:01:11,760 --> 00:01:16,020
+las definiciones para compilar el paquete pueden tomar binarios u otros artefactos ya construidos.
+
+25
+00:01:16,440 --> 00:01:20,200
+Ofrecemos muchos componentes genéricos fundamentales sobre los que puede construir,
+
+26
+00:01:20,360 --> 00:01:22,620
+como una granja de servidores para compilar software y clústeres de LXD.
+
+27
+00:01:22,980 --> 00:01:27,520
+También hacemos que las herramientas se integren más fácilmente con su sistema existente de compilación e integración continua.
+
+28
+00:01:28,260 --> 00:01:32,220
+Compile una vez, publique una vez, ejecute en muchos sistemas de Linux.
+
+29
+00:01:32,220 --> 00:01:33,660
+Esta lista está creciendo,
+
+30
+00:01:33,660 --> 00:01:36,040
+y el soporte para compilar y probar desde Windows y Mac
+
+31
+00:01:36,040 --> 00:01:37,920
+lo agregaremos pronto.
+
+32
+00:01:37,920 --> 00:01:42,120
+Snaps son como un contenedor, pero sin el exceso de equipaje de una imagen de sistema operativo incluido.
+
+33
+00:01:42,540 --> 00:01:46,660
+Eso significa que incluso puede instalar snaps en contenedores de lxd o docker.
+
+34
+00:01:47,120 --> 00:01:49,460
+El modelo de confinamiento puede ajustarse.
+
+35
+00:01:49,460 --> 00:01:52,160
+¿Necesita acceso a internet o accesar hardware?
+
+36
+00:01:52,160 --> 00:01:54,340
+Puede nada más agregarlo al yaml.
+
+37
+00:01:54,340 --> 00:01:58,080
+Incluso puede empaquetar editores y aplicaciones que necesitan accesso completo a su sistema
+
+38
+00:01:58,120 --> 00:02:02,400
+cambiando una línea del yaml a lo que llamamos confinamiento clásico.
+
+39
+00:02:03,040 --> 00:02:06,560
+Chequeos de salud le permiten a cualquier actualización validarse a sí misma.
+
+40
+00:02:06,820 --> 00:02:08,740
+Los usuarios se devolverán a una versión anterior de forma automática,
+
+41
+00:02:08,740 --> 00:02:10,540
+y puede redirigir el canal estable
+
+42
+00:02:10,540 --> 00:02:12,154
+a una revisión previa.
+
+43
+00:02:12,220 --> 00:02:16,520
+Los usuarios finales puede auditar estas transacciones usando el comando snap changes.
+
+44
+00:02:16,520 --> 00:02:20,620
+Los canales son una forma para que los usuarios se suscriban a un nivel de riesgo.
+
+45
+00:02:20,860 --> 00:02:23,600
+Puede publicar su integración continua automaticamente en «edge»,
+
+46
+00:02:23,660 --> 00:02:25,800
+en donde sus desarrolladores y aseguradores de calidad puede revisarla.
+
+47
+00:02:26,160 --> 00:02:29,080
+Puede promover estos mismos cambios a canales más estables
+
+48
+00:02:29,180 --> 00:02:30,260
+con un simple comando.
+
+49
+00:02:30,900 --> 00:02:33,300
+Puede configurar programas beta que cuando sean cerrados
+
+50
+00:02:33,300 --> 00:02:35,100
+mueven a los usuarios de vuelta a estable.
+
+51
+00:02:35,800 --> 00:02:38,540
+No más larga cola de versiones que soportar.
+
+52
+00:02:38,540 --> 00:02:41,260
+Los «tracks» le permiten introducir cambios imcompatibles,
+
+53
+00:02:41,260 --> 00:02:43,240
+sin romper a los usuarios existentes.
+
+54
+00:02:43,520 --> 00:02:47,480
+Los «tracks» pueden tener cualquier nombre: 2.0, 3.2 o banano.
+
+55
+00:02:48,040 --> 00:02:52,340
+Cada «track» tiene sus propios canales «stable», «candidate», «beta», y «edge».
+
+56
+00:02:52,500 --> 00:02:55,100
+Los sistemas se actualizan cuatro veces al día,
+
+57
+00:02:55,100 --> 00:02:56,700
+o cuando el usuario lo solicite.
+
+58
+00:02:56,700 --> 00:02:58,500
+Las actualizaciones se entregan como deltas.
+
+59
+00:02:58,980 --> 00:03:01,820
+Estamos dirigiendo esto desde el espacio de internet de las cosas, en el que necesita actualizar
+
+60
+00:03:01,900 --> 00:03:03,960
+su refrigeradora inteligente por parches de seguridad,
+
+61
+00:03:03,960 --> 00:03:05,360
+pero no se puede arriesgar a que falle.
+
+62
+00:03:05,800 --> 00:03:08,380
+Cuatro veces al día no es suficientemente rápido para todos los casos.
+
+63
+00:03:08,380 --> 00:03:10,000
+Actualizaciones «push» vienen pronto.
+
+64
+00:03:10,800 --> 00:03:14,340
+El kernel y el sistema operativo base también se publican como snaps.
+
+65
+00:03:14,800 --> 00:03:17,140
+The kernel and OS roll back on failure,
+
+66
+00:03:17,140 --> 00:03:18,340
+igual como las aplicaciones.
+
+67
+00:03:18,460 --> 00:03:21,220
+El sistema se reinicia de vuelta a un estado bueno conocido.
+
+68
+00:03:21,700 --> 00:03:25,080
+El código ejecutando en dispositivos de punto de entrada a la red no es manipulable.
+
+69
+00:03:25,260 --> 00:03:27,920
+Un gran huesped para contenedores docker, y,
+
+70
+00:03:27,920 --> 00:03:30,060
+así como es el caso con otras aplicaciones en la plataforma,
+
+71
+00:03:30,060 --> 00:03:33,600
+el snap de docker es publicado directamente por docker.
+
+72
+00:03:33,860 --> 00:03:36,720
+Así como la nube le ahorra a las compañias la planeación del centro de procesamiento de datos,
+
+73
+00:03:36,880 --> 00:03:38,980
+queremos actualizar la publicación para que esté resuelta
+
+74
+00:03:39,000 --> 00:03:42,340
+de forma que la gente pueda meterse en tareas diferenciadoras de más alto nivel.
+
+75
+00:03:42,600 --> 00:03:43,820
+Su retroalimentación es bienvenida.
+
+76
+00:03:43,820 --> 00:03:45,920
+Contáctenos si tiene preguntas o comentarios
+
+77
+00:03:45,960 --> 00:03:48,020
+acerca de cómo podríamos apoyarle mejor.
+
+78
+00:03:48,120 --> 00:03:49,300
+También es código abierto.
+
+79
+00:03:49,520 --> 00:03:53,240
+Puede obtener snapd y snapcraft en GitHub, si quiere contribuir.
+
+80
+00:03:53,500 --> 00:03:57,440
+Encuentre más en snapcraft.io.
+
