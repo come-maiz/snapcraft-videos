@@ -9,3 +9,5 @@
  * [Video](https://www.youtube.com/watch?v=ymO49VCY1BQ)
  * [Description](part2/description.txt)
  * [Script](part2/script.txt)
+ * Translations:
+   * [Russian subtitles](part2/subtitles-ru.srt)
