@@ -1,0 +1,15 @@
+Building snaps of node applications is easy, this video shows how.
+
+Part 1: https://www.youtube.com/watch?v=S3YvRALc2C0
+Part 2: https://www.youtube.com/watch?v=ymO49VCY1BQ
+
+Install snapcraft: https://snapcraft.io/docs/build-snaps/
+
+Store sign up: http://dashboard.snapcraft.io/
+
+Find out more at http://snapcraft.io/
+Subscribe to our YouTube channel: https://youtube.com/snapcraftio
+Follow us on Twitter: http://twitter.com/snapcraft.io
+See our updates on G+: https://plus.google.com/+snapcraftio
+Discuss this on our forums: http://forum.snapcraft.io
+Get updates via Telegram: https://t.me/snapcraftio

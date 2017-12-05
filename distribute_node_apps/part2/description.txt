@@ -1,0 +1,16 @@
+Preparing node snap for stable releases
+
+Building on our previous video where we build a snap of a node application. In this part we use strict confinement to enable us to push the application to the stable channel.
+
+Part 1: https://www.youtube.com/watch?v=S3YvRALc2C0
+Part 2: https://www.youtube.com/watch?v=ymO49VCY1BQ
+
+Confinement documentation: https://docs.snapcraft.io/reference/confinement
+Supported interfaces: https://docs.snapcraft.io/core/interfaces
+
+Find out more at http://snapcraft.io/
+Subscribe to our YouTube channel: https://youtube.com/snapcraftio
+Follow us on Twitter: http://twitter.com/snapcraft.io
+See our updates on G+: https://plus.google.com/+snapcraftio
+Discuss this on our forums: http://forum.snapcraft.io
+Get updates via Telegram: https://t.me/snapcraftio
