@@ -1,4 +1,4 @@
-# Node-Apps mit Leichtigkeit für Linuxnutzer verfügbar machen
+Node-Apps mit Leichtigkeit für Linuxnutzer verfügbar machen
 
 Es ist nicht schwer einen Node-Snap zu bauen. Dieses Video zeigt dir wie es geht.
 

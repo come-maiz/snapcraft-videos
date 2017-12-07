@@ -1,13 +1,10 @@
-Easily distribute node apps on to Linux users
+Get started with Snapcraft
 
-Building snaps of node applications is easy, this video shows how.
+Installing snapcraft easy quick and easy. This video shows how.
 
-Part 1: https://www.youtube.com/watch?v=S3YvRALc2C0
-Part 2: https://www.youtube.com/watch?v=ymO49VCY1BQ
-
-Install snapcraft: https://snapcraft.io/docs/build-snaps/
-
-Store sign up: http://dashboard.snapcraft.io/
+Install the snap: sudo snap install snapcraft --beta --classic
+Install via docker: sudo docker run -v $PWD:$PWD -w $PWD snapcore/snapcraft snapcraft
+Login to the store: snapcraft login Store sign up: http://dashboard.snapcraft.io/
 
 Find out more at http://snapcraft.io/
 Subscribe to our YouTube channel: https://youtube.com/snapcraftio

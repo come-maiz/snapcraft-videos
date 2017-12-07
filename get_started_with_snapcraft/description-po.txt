@@ -1,0 +1,16 @@
+Rozpoczynanie pracy ze Snapcraft
+
+Instalacja snapcraft'a jest szybka i łatwa . To wideo zademonstruje jak to zrobić.
+
+Za pomocą paczki snap: sudo snap install snapcraft --beta --classic
+Za pomocą dockera: sudo docker run -v $PWD:$PWD -w $PWD snapcore/snapcraft snapcraft
+Zaloguj się do sklepu: snapcraft login
+
+Zarejestruj się w sklepie: http://dashboard.snapcraft.io/
+
+Więcej informacji na stronie http://snapcraft.io/
+Subskrybuj nasz kanał YouTube: https://youtube.com/snapcraftio
+Obserwuj nas na Twitterze: http://twitter.com/snapcraft.io
+Zobacz nasze aktualizacje w Google+: https://plus.google.com/+snapcraftio
+Rozpocznij dyskusję na naszym forum: http://forum.snapcraft.io
+Otrzymuj powiadomienia przez Telegram: https://t.me/snapcraftio

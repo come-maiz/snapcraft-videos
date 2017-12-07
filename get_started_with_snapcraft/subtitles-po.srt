@@ -1,0 +1,44 @@
+1
+00:00:00,140 --> 00:00:03,000
+Snapcraft jest przyjaznym narzędziem do wydawania aktualizacji
+
+2
+00:00:03,000 --> 00:00:04,580
+do twojej aplikacji na Linuxie
+
+3
+00:00:06,540 --> 00:00:08,240
+Snapcraft jest dostępny jako "snap"
+
+4
+00:00:08,540 --> 00:00:11,380
+Więc może być zainstalowany na wspieranych systemach
+
+5
+00:00:11,380 --> 00:00:12,520
+z zainstalowanym snapem Snapcraft
+
+6
+00:00:14,980 --> 00:00:17,865
+Jeżeli jesteś na innej dystrybucji Linuxa lub na Macu
+
+7
+00:00:17,865 --> 00:00:19,645
+Możesz używać "dockera", aby używać Snapcrafta
+
+8
+00:00:22,985 --> 00:00:26,215
+Po zainstalowaniu użyj "Snapcraft", aby zalogować się do sklepu
+
+9
+00:00:26,220 --> 00:00:29,020
+Aby móc wydawać snapy, które tworzysz
+
+10
+00:00:30,880 --> 00:00:35,200
+Jeżeli nie masz konta zarejestruj się na dashboard.snapcraft.io
+
+11
+00:00:36,980 --> 00:00:39,500
+Dowiedz się więcej na snapcraft.io
+
