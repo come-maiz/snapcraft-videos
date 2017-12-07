@@ -1,0 +1,76 @@
+1
+00:00:00,000 --> 00:00:04,980
+Snapcraft macht es einfach, Linux-Pakete für Node-Apps zu erstellen.
+
+2
+00:00:07,400 --> 00:00:10,900
+Wenn du den snapcraft-Befehl noch nicht hast musst du ihn erst installieren.
+
+3
+00:00:10,920 --> 00:00:12,980
+Es befindet sich ein Link in der Beschreibung unter dem Video.
+
+4
+00:00:14,620 --> 00:00:18,720
+Als erstes müssen wir überprüfen ob der Name der App verfügbar ist.
+
+5
+00:00:18,720 --> 00:00:21,520
+Dann muss er registriert werden damit wir ihn verwenden können.
+
+6
+00:00:21,900 --> 00:00:25,540
+Wenn der Name vergeben ist: Kein Problem, suche einen anderen aus.
+
+7
+00:00:27,060 --> 00:00:32,020
+Jetzt erstellen wir eine Snapcraft-YAML-Vorlage, welche wir bearbeiten um die App zu beschreiben.
+
+8
+00:00:33,900 --> 00:00:37,820
+In den Metatdaten ändern wir die Daten, die Nutzer im Store sehen, wenn sie nach deiner Anwendung suchen.
+
+9
+00:00:39,940 --> 00:00:43,400
+Wenn du gerade einen anderen Namen registrieren musstest, musst du ihn hier auch benutzen.
+
+10
+00:00:47,900 --> 00:00:51,520
+Jetzt fügen wir den "Part" hinzu, der festlegt, wie die App gebaut ist.
+
+11
+00:00:53,880 --> 00:00:59,120
+Wir benutzen hier das node.js-Plug-In. Snapcraft weiß mit Node-Apps umzugehen.
+
+12
+00:01:02,320 --> 00:01:06,140
+Wir bleiben erstmal im Entwicklungsmodus ("devmode"). Das heißt, die App läuft nicht im Confinement.
+
+13
+00:01:06,180 --> 00:01:07,900
+Das können wir später noch ändern.
+
+14
+00:01:12,820 --> 00:01:17,060
+Schließlich definieren wir über "apps" die Befehle, welche im Snap enthalten sein sollen.
+
+15
+00:01:22,180 --> 00:01:25,500
+Das war's schon! Jetzt können wir den Snap mit dem Snapcraft-Befehl erstellen,
+
+16
+00:01:38,600 --> 00:01:42,840
+lokal das unsignierte Paket mit "snap install" installieren und testen
+
+17
+00:01:47,220 --> 00:01:50,140
+und mit "snapcraft push" in the Store hochladen.
+
+18
+00:02:00,660 --> 00:02:05,620
+Gut! Jetzt kannst du deiner Community erzählen, dass man das Paket mit "snap install" installieren kann.
+
+19
+00:02:08,300 --> 00:02:11,140
+Mehr Infos findest du auf snapcraft.io
+

@@ -4,6 +4,10 @@
  * [Description](part1/description.txt)
  * [Subtitles](part1/subtitles.txt)
  * [Script](part1/script.txt)
+ * Translations:
+   * German:
+     * [Description](part1/description-de.txt)
+     * [Subtitles](part1/subtitles-de.srt)
 
 # Part 2: Preparing node snap for stable releases
 

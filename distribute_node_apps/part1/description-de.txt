@@ -1,0 +1,17 @@
+# Node-Apps mit Leichtigkeit für Linuxnutzer verfügbar machen
+
+Es ist nicht schwer einen Node-Snap zu bauen. Dieses Video zeigt dir wie es geht.
+
+Teil 1: https://www.youtube.com/watch?v=S3YvRALc2C0
+Teil 2: https://www.youtube.com/watch?v=ymO49VCY1BQ
+
+Snapcraft installieren: https://snapcraft.io/docs/build-snaps/
+
+Store-Registrierung: http://dashboard.snapcraft.io/
+
+Finde mehr heraus auf http://snapcraft.io/
+Abonniere unseren Youtube-Kanal: https://youtube.com/snapcraftio
+Folge uns auf Twitter: http://twitter.com/snapcraft.io
+Sieh unsere Updates auf Google+: https://plus.google.com/+snapcraftio
+Diskutiere in unserem Forum: http://forum.snapcraft.io
+Erhalte Neuigkeiten via Telegram: https://t.me/snapcraftio
