@@ -1,0 +1,64 @@
+1
+00:00:00,640 --> 00:00:05,430
+Snapcraft makes it easy to package and distribute your node applications to Linux users.
+
+2
+00:00:07,090 --> 00:00:12,269
+If you don't already have the snapcraft command, you'll need to install it. There's a link in the description below
+
+3
+00:00:14,559 --> 00:00:20,008
+First we need to check the application name is available in the store and register it for our use
+
+4
+00:00:21,279 --> 00:00:24,209
+If the name is taken don't worry just choose another one
+
+5
+00:00:26,840 --> 00:00:31,840
+Now we'll create a template snapcraft yaml which will edit to describe the application
+
+6
+00:00:33,290 --> 00:00:37,720
+Add in the metadata users will see when searching the store for your application
+
+7
+00:00:39,500 --> 00:00:43,059
+If you had to register a different name earlier be sure to use that here
+
+8
+00:00:47,800 --> 00:00:51,079
+Now, add a part to describe how your application is built.
+
+9
+00:00:53,730 --> 00:00:58,790
+We use the node.js plugin snapcraft knows how to handle nodejs applications
+
+10
+00:01:02,120 --> 00:01:07,330
+We'll start with Devmode which means the application is unconfined. We can tighten that up later
+
+11
+00:01:12,590 --> 00:01:16,749
+Finally we add an app stanza to define the commands contained in the snap.
+
+12
+00:01:21,920 --> 00:01:25,209
+That’s it. Now we can create the snap with the snapcraft command.
+
+13
+00:01:38,590 --> 00:01:42,470
+Install and test the unsigned package locally with snap install
+
+14
+00:01:46,010 --> 00:01:49,730
+And push to the store with snapcraft push
+
+15
+00:02:00,610 --> 00:02:05,020
+Great! Now you can tell your community to snap install your application
+
+16
+00:02:08,220 --> 00:02:10,580
+Find out more at snapcraft dot io
+

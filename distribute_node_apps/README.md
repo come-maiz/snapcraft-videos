@@ -2,6 +2,7 @@
 
  * [Video](https://www.youtube.com/watch?v=S3YvRALc2C0)
  * [Description](part1/description.txt)
+ * [Subtitles](part1/subtitles.txt)
  * [Script](part1/script.txt)
 
 # Part 2: Preparing node snap for stable releases
