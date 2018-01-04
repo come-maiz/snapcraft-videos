@@ -1,0 +1,12 @@
+Get started creating your first robot by installing Ubuntu Core and following
+the CamJam worksheets.
+
+This video is part 1 of a series. It corresponds to
+[this blog post](https://insights.ubuntu.com/2017/12/19/your-first-robot-a-beginners-guide-to-ros-and-ubuntu-core-1-5/).
+
+Find out more at http://snapcraft.io/
+Subscribe to our YouTube channel: https://youtube.com/snapcraftio
+Follow us on Twitter: http://twitter.com/snapcraft.io
+See our updates on G+: https://plus.google.com/+snapcraftio
+Discuss this on our forums: http://forum.snapcraft.io
+Get updates via Telegram: https://t.me/snapcraftio

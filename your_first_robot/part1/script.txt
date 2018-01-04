@@ -1,0 +1,102 @@
+This is the CamJam Edukit #3, a super-cheap, build-your-own robotics kit. It is the basis of the new robot series I'm creating, meant for adults and kids alike who want an easy introduction to professional robotics without needing to shell out hundreds or even thousands of dollars. In fact, all the hardware required costs less than $100. It's cheap enough to be a Christmas present!
+
+At the end of this series, you'll be driving your robot around with a remote control using the Robot Operating System (or "ROS"), with the road paved toward making it completely autonomous.
+
+You'll also have the software you wrote packaged as a snap, which means that, with a single command, you can share your version of the software for this series with your friends.
+
+This is part 1 of the series. It's also a blog series-- if you'd prefer to read it, the link is in the description below.
+
+In this video, I want to introduce all the hardware involved so you can hurry up and buy it in order to follow along. The computer driving the whole thing is a Raspberry Pi, so I'll also get you up and running with Ubuntu Core so that you can experiment with your new robot.
+
+Let's get started with your shopping list. Links for all these items are in the description below.
+
+
+Of course, you need the EduKit. I bought mine from the Pi Hut, based in the UK, for 18 pounds, or about 25 bucks.
+
+Not only is it a pretty sweet little kit, they also provide worksheets for introducing you to the platform and getting you started writing software to control it.
+
+
+You'll also need a Raspberry Pi 2 or 3 (I'm using a 2), which is about 35 dollars.
+
+In addition, I suggest a battery for the raspberry pi. This is optional, but if you don't have one, your robot will be tethered by the raspberry pi's power supply, which makes it less cool. The one I got was 15 bucks.
+
+Finally, you'll need a controller. You can use an Xbox 360 controller, but I got this wireless one from the Pi Hut for 14 pounds, or about 20 dollars.
+
+
+That's everything you'll need, coming out at just under $100 dollars.
+
+
+Now that you've got everything together, let's get started by installing Ubuntu Core on the Raspberry Pi, and then go through one of the CamJam worksheets.
+
+
+While this is meant to be an introduction, I want to be clear on some of the assumptions I'm making.
+
+This series assumes you're at least somewhat familiar with the command-line of Ubuntu, or other Debian-based distro, like Raspbian. I don't expect you to be a shell-scripting pro, but you should know how to navigate around the file system and use terminal-based editors like vi and nano.
+
+So what is Ubuntu Core?
+
+Ubuntu Core is a specialized distribution of Ubuntu that is dedicated to devices that fit into the "Internet of Things" (IoT) bucket. This includes routers, thermostats, and of course, robots.
+
+It's my hope that, in introducing you to the operating system and tools that the pros use for their robots, the road is paved for you to go on and accomplish great things in this field!
+
+Now, Ubuntu Core is a little different from more traditional distros like classic Ubuntu or Raspbian. Let's get started installing it, and I'll explain what I mean.
+
+There's a tutorial for this linked in the description below that you should follow if you haven't done this before, but I'll cover it quickly here as well.
+
+You'll need a keyboard and monitor, but only for the first boot. Unlike Raspbian or Ubuntu MATE, there is no default username/password or install process where you create a user. It doesn't even use a mouse-- this is more like Ubuntu Server.
+
+In fact, there's no local login at all: it's all done over SSH, a remote login over the network, with cryptographic keys instead of passwords.
+
+This is part of Ubuntu Core's "secure by default" philosophy. There are numerous examples of default credentials being abused-- Google the Mirai botnet-- and as an IoT-focused operating system, Ubuntu Core can't have that.
+
+That's why you'll need a free Ubuntu SSO account and SSH keys in order to login. If you don't already have these, don't worry, they're easy to get, just hit the install guide link in the description for more details.
+
+The first thing we need to do is download the Ubuntu Core image for the Raspberry pi 2 or 3.
+
+Now let's write it to our SD card, following the guide.
+
+Insert that SD card into the raspberry pi, connect the keyboard, monitor, and network cable, and power it up.
+
+Once it boots, you'll hit the first boot wizard that you can use to gain access. It's worth pointing out real quick that if you don't need access to the device, you don't need to go through this step-- anything preinstalled in the image has already started up and is running. Of course, in our case, we want access, so we'll "press enter to configure".
+
+We'll press enter again here...
+
+The default network configuration just uses DHCP, which works for me, so I'll hit "tab" to switch to "done" and hit enter.
+
+This is the last step, when we tell Ubuntu Core the email address we used for our Ubuntu SSO account. Using this information, Ubuntu Core will fetch the public keys we uploaded to our account, thereby granting us key-based access to this device.
+
+And now we can SSH in from our own machine using the directions it gives.
+
+As an IoT-focused operating system, Ubuntu Core uses a different packaging format from Raspbian and classic Ubuntu. Rather than using Debian packaging, Ubuntu Core uses a packaging format called snaps. Snaps are far more robust when it comes to reliable updates and security, both of which are important to IoT devices, including robots.
+
+As a result, there is no apt on this system. To give you a taste of what using the snap command is like, let's make sure our system is completely up-to-date by running snap refresh.
+
+So: if there is no apt, how are we supposed to install all of our developer tools? Thankfully, there's a special snap exactly for that called "classic" which gives you access to all your familiar tools, including apt.
+
+Let's install that now.
+
+Alright, it's installed. Using this, we can run "sudo classic" and gain access to a shell where we can install debs, which we'll use for hacking on our robot.
+
+Alright, we're now to the point where we can begin following CamJam's worksheets! Let's start with the very first one, linked in the description below. This one assumes you're running Raspbian, which we're not, so while I suggest reading the whole thing, for now let's skip straight to the "Writing code" section.
+
+First, make sure you're in your classic shell. You'll be able to tell with the "classic" text in your prompt.
+
+Following the worksheet, open up a file called 1-helloworld.py. I'm using "vi" here, but you can "sudo apt install nano" if you prefer.
+
+Fill this file according to the worksheet, just printing a simple "hello world".
+
+Save and exit. For those of you who don't now anything about vi, that's escape, colon, and wq for "write" and "quit". Then press enter.
+
+You can now run that code like this...
+
+I do suggest going through the rest of that worksheet, it'll be helpful to you later on.
+
+That's it for part 1, but I want to assign you some homework before you start part 2: complete worksheets 2, 3, 4, and 7. You can totally do the other ones as well, but we won't be using the ultrasonic sensor or line detector in this series, so you don't have to.
+
+Before you do anything with GPIO though, you need to install the RPi.GPIO package. From your classic shell, install gcc, python3-dev, python3-pip, and python3-setuptools.
+
+Then run pip3 install RPi.GPIO
+
+Aright, now you're set. One last note: anything that uses GPIO is considered privileged on Ubuntu Core, and will need to be run with sudo. Read through the rest of worksheet #1 and you'll understand what I mean.
+
+In the next part, we'll learn about ROS: what it is, why it's useful, why you need to know it, and how to get it on your Ubuntu-Core-powered Raspberry Pi. See you then.
