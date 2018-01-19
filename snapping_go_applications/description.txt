@@ -1,0 +1,25 @@
+Snapping Go Applications - Snapcraft Office Hours
+
+Join the Snapcraft team for news, discussion, tutorials and a live Q&A.
+
+00:00 - Intro
+01:59 - Sergio introduces some news (links below)
+04:52 - Leo demonstrates packaging up pocketplace as a snap, and debugging confinement
+21:06 - Sergio demonstrates packaging go-ethereum (geth) as a snap, multiple applications, remote parts and version stamps.
+36:36 - Q&A
+
+Links mentioned during the news:-
+https://insights.ubuntu.com/2017/07/05/user-acceptance-testing-of-snaps-with-travis-ci
+https://circleci.com/blog/build-test-publish-snap-packages
+https://kyrofa.com/posts/continuous-acceptance-tests-for-complex-applications
+https://docs.travis-ci.com/user/installing-dependencies/#Installing-Snap-Packages
+
+Documentation for plugs in snapcraft:-
+https://snapcraft.io/docs/reference/interfaces
+
+Find out more at http://snapcraft.io/
+Subscribe to our YouTube channel: https://youtube.com/snapcraftio
+Follow us on Twitter: http://twitter.com/snapcraft.io
+See our updates on G+: https://plus.google.com/+snapcraftio
+Discuss this on our forums: http://forum.snapcraft.io
+Get updates via Telegram: https://t.me/snapcraftio
