@@ -1,0 +1,3 @@
+Managing channels
+
+A brief demo using snapcraft to manage software channels in the snap store.

@@ -10,6 +10,7 @@ This repo contains resources related to the snapcraft videos.
   * [Auto-build and publish software for any Linux system or device](autobuild_and_publish)
   * [Using snapcraft tracks to support software releases](using_snapcraft_tracks)
   * [Using channels to support releases](using_channels)
+  * [Managing channels](managing_channels)
   * [Classic, devmode, and strict confinement](confinement)
   * [Distribute node apps](distribute_node_apps)
   * [Benefits to snap packaging your Electron app](benefits_to_snap_electron_app)
