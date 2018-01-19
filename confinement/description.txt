@@ -1,0 +1,13 @@
+Classic, devmode, and strict confinement
+
+A short introduction to the confinement policies available when building snaps.
+
+https://snapcraft.io/
+https://snapcraft.io/docs/reference/confinement
+
+Find out more at http://snapcraft.io/
+Subscribe to our YouTube channel: https://youtube.com/snapcraftio
+Follow us on Twitter: http://twitter.com/snapcraft.io
+See our updates on G+: https://plus.google.com/+snapcraftio
+Discuss this on our forums: http://forum.snapcraft.io
+Get updates via Telegram: https://t.me/snapcraftio

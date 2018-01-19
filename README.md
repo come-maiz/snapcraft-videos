@@ -8,6 +8,7 @@ This repo contains resources related to the snapcraft videos.
   * [Get started with Snapcraft](get_started_with_snapcraft)
   * [Using snapcraft tracks to support software releases](using_snapcraft_tracks)
   * [Using channels to support releases](using_channels)
+  * [Classic, devmode, and strict confinement](confinement)
   * [Distribute node apps](distribute_node_apps)
   * [Building for Linux on Windows](building_for_linux_on_windows)
   * [Building Linux Applications on Windows](building_linux_applications_on_windows)
