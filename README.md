@@ -9,6 +9,7 @@ This repo contains resources related to the snapcraft videos.
   * [Using snapcraft tracks to support software releases](using_snapcraft_tracks)
   * [Distribute node apps](distribute_node_apps)
   * [Building for Linux on Windows](building_for_linux_on_windows)
+  * [Building Linux Applications on Windows](building_linux_applications_on_windows)
   * [Introducing Snapcraft Office Hours](introducing_snapcraft_office_hours)
   * [Snapping Python Applications](snapping_python_applications)
   * [Snapping Go Applications](snapping_go_applications)

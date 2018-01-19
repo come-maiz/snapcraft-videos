@@ -1,0 +1,27 @@
+Building Linux Applications on Windows
+
+https://popey.com/blog/posts/building-apps-for-linux-without-linux.html
+
+Snaps & snapcraft.io in 3 minutes: https://www.youtube.com/watch?v=DLxqdf89hRo
+Take the snapcraft tour: https://www.youtube.com/watch?v=k-laAxucmEQ
+
+Installing Bash for Windows:- https://msdn.microsoft.com/en-gb/commandline/wsl/about
+
+Re-installing Bash for Windows:-
+Warning, this will delete your entire Bash on Windows environment.
+* Backup any settings or data WSL contains first.
+* Open a Command Prompt Window
+* lxrun /uninstall
+* lxrun /install
+
+Installing snapcraft in Bash on Windows:-
+* Search the start menu for “Bash”
+* Click the Ubuntu icon
+* In the Bash on Windows environment, run “sudo apt install snapcraft”
+
+Find out more at http://snapcraft.io/
+Subscribe to our YouTube channel: https://youtube.com/snapcraftio
+Follow us on Twitter: http://twitter.com/snapcraft.io
+See our updates on G+: https://plus.google.com/+snapcraftio
+Discuss this on our forums: http://forum.snapcraft.io
+Get updates via Telegram: https://t.me/snapcraftio
