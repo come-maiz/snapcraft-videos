@@ -1,0 +1,16 @@
+# Snapping Python Applications - Snapcraft Office Hours
+
+Join the Snapcraft team for news, discussion, tutorials and a live Q&A.
+
+00:00 Introduction
+01:48 Snapcraft news with Kyle & Leo
+07:52 Alan demos an offlineimap snap
+22:17 Martin demos a youtube-dl snap
+37:12 Leo grabs some of your questions from http://rocket.ubuntu.com/ snapcraft channel
+
+Find out more at http://snapcraft.io/
+Subscribe to our YouTube channel: https://youtube.com/snapcraftio
+Follow us on Twitter: http://twitter.com/snapcraft.io
+See our updates on G+: https://plus.google.com/+snapcraftio
+Discuss this on our forums: http://forum.snapcraft.io
+Get updates via Telegram: https://t.me/snapcraftio
