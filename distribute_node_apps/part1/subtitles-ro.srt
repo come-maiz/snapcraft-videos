@@ -1,0 +1,68 @@
+1
+00:00:00,715 --> 00:00:06,200
+Snapcraft, îți face ușoară impachetarea si distribuirea aplicatiilor nod pentru conturilor de tip linux.
+
+2
+00:00:07,700 --> 00:00:12,620
+Daca nu ai deja programul snapcraft, va trebui sa il instalezi. Este un link in descrierea de jos.
+
+3
+00:00:14,700 --> 00:00:20,500
+Prima data trebuie sa verificam daca numele aplicatiei este disponibil in magazin si sa il inregistram pentru uzul nostru.
+
+4
+00:00:21,600 --> 00:00:24,700
+Daca numele este deja folosit, nu va ingrijorati, doar alegeti un alt nume.
+
+5
+00:00:26,900 --> 00:00:32,300
+Acum vom crea sablonul snapcraft galben care va ajuta la descrierea aplicatiei.
+
+6
+00:00:33,960 --> 00:00:37,880
+Adaugati-l in metadata, astfel persoana il va vedea cand va cauta in magazin dupa aplicatia dumneavoastra
+
+7
+00:00:39,760 --> 00:00:43,300
+Daca vreti sa va inregistrati mai multe nume la inceput, adaugati-le aici.
+
+8
+00:00:48,180 --> 00:00:51,280
+La "parts" veti scrie cum aplicatia a fost construita.
+
+9
+00:00:53,980 --> 00:00:59,280
+Folosim plugin-ul nodcjs. Snapcraft stie cum sa manevreze aplicatiile nodcjs.
+
+10
+00:01:02,300 --> 00:01:07,820
+Vom incepe cu devmode, adica aplicatia nu a fost inceputa. Vom rezolva asta mai tarziu.
+
+11
+00:01:12,660 --> 00:01:17,240
+Insfarsit avem o sectiune pentru a defini programele folosite in snap.
+
+12
+00:01:22,000 --> 00:01:25,540
+Asta este. Acum putem crea snap-ul cu programul snapcraft.
+
+13
+00:01:38,560 --> 00:01:42,840
+Instalati si testati pachetul neinregistrat  cu comanda: snap install.
+
+14
+00:01:47,300 --> 00:01:50,300
+Puneti-l pe magazin cu comanda: snapcraft push.
+
+15
+00:02:00,800 --> 00:02:01,500
+Excelent!
+
+16
+00:02:01,720 --> 00:02:05,080
+Acum poti sa ii spui comunitatii sa iti "snap install" aplicatia ta.
+
+17
+00:02:08,520 --> 00:02:11,000
+Gasiti mai multe pe site-ul snapcraft.io
+
