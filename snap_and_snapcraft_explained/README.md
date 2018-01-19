@@ -5,4 +5,5 @@
  * [Subtitles](subtitles.srt)
  * Translations:
 
+   * [French subtitles](subtitles-fr.srt)
    * [Spanish subtitles](subtitles-es.srt)
