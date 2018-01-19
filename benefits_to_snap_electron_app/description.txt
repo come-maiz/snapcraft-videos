@@ -1,0 +1,3 @@
+Benefits to snap packaging your Electron app
+
+http://snapcraft.io/
