@@ -1,0 +1,4 @@
+Auto-build and publish software for any Linux system or device
+
+http://build.snapcraft.io/
+http://snapcraft.io/
