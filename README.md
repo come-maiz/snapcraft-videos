@@ -7,6 +7,7 @@ This repo contains resources related to the snapcraft videos.
   * [Snaps and snapcraft.io explained in 3 minutes](snap_and_snapcraft_explained)
   * [Get started with Snapcraft](get_started_with_snapcraft)
   * [Distribute node apps](distribute_node_apps)
+  * [Building one GNOME snap](building_gnome_snap)
   * [Building Snaps in Containers](building_snaps_in_containers)
   * [Building Rust Snaps with Snapcraft](building_rust_snaps_with_snapcraft)
   * [Your first robot](your_first_robot)
