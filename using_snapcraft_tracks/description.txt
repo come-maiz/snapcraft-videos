@@ -1,0 +1,11 @@
+Using snapcraft tracks to support software releases
+
+Tracks are designed to support multiple software releases in the store.
+https://snapcraft.io/docs/reference/channels
+
+Find out more at http://snapcraft.io/
+Subscribe to our YouTube channel: https://youtube.com/snapcraftio
+Follow us on Twitter: http://twitter.com/snapcraft.io
+See our updates on G+: https://plus.google.com/+snapcraftio
+Discuss this on our forums: http://forum.snapcraft.io
+Get updates via Telegram: https://t.me/snapcraftio
