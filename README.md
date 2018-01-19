@@ -6,6 +6,7 @@ This repo contains resources related to the snapcraft videos.
 
   * [Snaps and snapcraft.io explained in 3 minutes](snap_and_snapcraft_explained)
   * [Get started with Snapcraft](get_started_with_snapcraft)
+  * [Take the snapcraft tour](tour)
   * [Using snapcraft tracks to support software releases](using_snapcraft_tracks)
   * [Using channels to support releases](using_channels)
   * [Classic, devmode, and strict confinement](confinement)

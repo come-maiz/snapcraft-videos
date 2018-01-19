@@ -1,0 +1,13 @@
+Take the snapcraft tour
+
+A look at the built in tour in snapcraft.
+
+Install snap support:- https://snapcraft.io/docs/core/install
+Build snaps:- https://snapcraft.io/docs/build-snaps/
+
+Find out more at http://snapcraft.io/
+Subscribe to our YouTube channel: https://youtube.com/snapcraftio
+Follow us on Twitter: http://twitter.com/snapcraft.io
+See our updates on G+: https://plus.google.com/+snapcraftio
+Discuss this on our forums: http://forum.snapcraft.io
+Get updates via Telegram: https://t.me/snapcraftio
