@@ -1,0 +1,12 @@
+Building Rust Snaps with Snapcraft
+
+Join the Snapcraft team for news, discussion, tutorials and a live Q&A.
+
+This week Sergio joins us to talk about using the snapcraft rust plugin to build rust applications for Linux. We also mention an upcoming feature, per-package container builds.
+
+Find out more at http://snapcraft.io/ 
+Subscribe to our YouTube channel: https://youtube.com/snapcraftio 
+Follow us on Twitter: http://twitter.com/snapcraft.io
+See our updates on G+: https://plus.google.com/+snapcraftio 
+Discuss this on our forums: http://forum.snapcraft.io 
+Get updates via Telegram: https://t.me/snapcraftio
