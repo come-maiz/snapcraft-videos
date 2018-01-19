@@ -2,3 +2,4 @@
 
  * [Video](https://www.youtube.com/watch?v=-3b9qkl9Z_k)
  * [Description](description.txt)
+ * [Subtitles](subtitles.srt)

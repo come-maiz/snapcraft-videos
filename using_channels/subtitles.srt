@@ -1,0 +1,92 @@
+1
+00:00:00,820 --> 00:00:04,780
+The Snap store provides four channels into which your software can be released.
+
+2
+00:00:04,780 --> 00:00:08,040
+They're named stable, candidate, beta and edge.
+
+3
+00:00:08,460 --> 00:00:11,480
+Each channel conveys a level of risk to the user
+
+4
+00:00:11,480 --> 00:00:15,320
+so software published there should be of an appropriate stability.
+
+5
+00:00:15,320 --> 00:00:19,980
+As a developer you can publish different releases of your snap to each channel
+
+6
+00:00:20,720 --> 00:00:23,580
+Automatically publish directly from each Github commit
+
+7
+00:00:23,740 --> 00:00:27,120
+to the edge channel from build.snapcraft.io,
+
+8
+00:00:27,140 --> 00:00:30,620
+from Travis, or manually using the snapcraft command.
+
+9
+00:00:30,620 --> 00:00:32,940
+Take supported releases of your software
+
+10
+00:00:33,020 --> 00:00:35,640
+and manually push those into the stable channel.
+
+11
+00:00:35,640 --> 00:00:38,800
+Users looking for stability over the latest features
+
+12
+00:00:38,960 --> 00:00:40,960
+can subscribe to that channel.
+
+13
+00:00:40,960 --> 00:00:44,700
+Your CI and QA team can subscribe to edge
+
+14
+00:00:44,700 --> 00:00:47,480
+to get the very latest builds automatically.
+
+15
+00:00:47,660 --> 00:00:49,920
+During prerelease you can use the beta channel
+
+16
+00:00:49,920 --> 00:00:52,700
+to deliver a new version to your testing team
+
+17
+00:00:52,700 --> 00:00:54,700
+prior to release.
+
+18
+00:00:54,700 --> 00:00:57,680
+Users can opt-in to the beta channel during this period,
+
+19
+00:00:57,680 --> 00:01:00,360
+and when testing is complete and you are ready to release,
+
+20
+00:01:00,360 --> 00:01:02,040
+they will move with you.
+
+21
+00:01:02,120 --> 00:01:05,980
+You can optionally use the candidate channel prior to release also.
+
+22
+00:01:06,280 --> 00:01:09,860
+Channels are designed to be flexible and support your release process.
+
+23
+00:01:10,360 --> 00:01:13,380
+Find out more at snapcraft.io,
+
