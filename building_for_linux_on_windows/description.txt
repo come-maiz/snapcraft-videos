@@ -1,0 +1,17 @@
+Building for Linux on Windows
+
+A quick demo of using Windows Subsystem for Linux (Bash for Windows) to build a Linux snap. I ran "bash -c snapcraft" in a Windows 10 command prompt Window.
+
+See our other videos about snapcraft in the snapcraft tutorials playlist:- https://www.youtube.com/playlist?list=PLLz665zen7Q4qpy5542g3nC_I2OzdrnNG
+
+
+Electrodoodle Kevin MacLeod (incompetech.com)
+Licensed under Creative Commons: By Attribution 3.0 License
+http://creativecommons.org/licenses/by/3.0/
+
+Find out more at http://snapcraft.io/
+Subscribe to our YouTube channel: https://youtube.com/snapcraftio
+Follow us on Twitter: http://twitter.com/snapcraft.io
+See our updates on G+: https://plus.google.com/+snapcraftio
+Discuss this on our forums: http://forum.snapcraft.io
+Get updates via Telegram: https://t.me/snapcraftio
