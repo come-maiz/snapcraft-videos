@@ -1,14 +1,14 @@
-1
+les 1
 00:00:01,480 --> 00:00:04,940
 Les méthodes traditionnelles de livraison de logiciels sur Linux sont problématiques.
 
 2
 00:00:04,940 --> 00:00:07,460
-Les paquets écrivent partout  le système de fichiers.
+Les paquets écrivent partout dans le système de fichiers.
 
 3
 00:00:07,520 --> 00:00:10,600
-Ils nécessitent des codes complexes pour gérer l'installation et les mises à jour.
+Ils nécessitent du code complexe pour gérer l'installation et les mises à jour.
 
 4
 00:00:10,860 --> 00:00:12,140
@@ -32,7 +32,7 @@ Ce que on a appelé snaps et snapcraft.
 
 9
 00:00:26,260 --> 00:00:29,160
-Il met le contrôle de la publication entre les mains des vendeurs,
+Il met le contrôle de la publication dans les mains des vendeurs,
 
 10
 00:00:29,300 --> 00:00:31,900
@@ -40,11 +40,11 @@ qui donne les outils pour fournir des mises à jour à une fréquence élevée
 
 11
 00:00:32,020 --> 00:00:34,520
-sans risquer l'expérience de l'utilisateur final.
+sans mettre en péril l'expérience de la part de l'utilisateur final.
 
 12
 00:00:34,820 --> 00:00:37,220
-Ces mises à jour ne nécessitent aucune interaction de l'utilisateur final,
+Ces mises à jour ne nécessitent aucune interaction de la part de l'utilisateur final,
 
 13
 00:00:37,240 --> 00:00:38,880
@@ -56,7 +56,7 @@ Si vous construisez un logiciel pour fonctionner sur Ubuntu 14.04 ou 16.04 aujou
 
 15
 00:00:43,220 --> 00:00:45,060
-c'est le meilleur moyen de le livrer.
+c'est le meilleur moyen de le distribuer.
 
 16
 00:00:45,480 --> 00:00:48,380
@@ -72,7 +72,7 @@ Le format est simple et déclaratif.
 
 19
 00:00:53,920 --> 00:00:58,060
-Seulement trois strophes: métadonnées, confinement et définition de construction.
+Seulement trois strophes: métadonnées, confinement et définitions de construction.
 
 20
 00:00:58,940 --> 00:01:01,940
@@ -317,4 +317,3 @@ Vous pouvez obtenir snapd et snapcraft sur GitHub, si vous voulez contribuer.
 80
 00:03:53,500 --> 00:03:57,440
 En savoir plus sur snapcraft.io.
-
