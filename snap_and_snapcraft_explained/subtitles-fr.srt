@@ -1,6 +1,6 @@
 les 1
 00:00:01,480 --> 00:00:04,940
-Les méthodes traditionnelles de livraison de logiciels sur Linux sont problématiques.
+Les méthodes traditionnelles de livraison de logiciels sous Linux sont problématiques.
 
 2
 00:00:04,940 --> 00:00:07,460
@@ -24,15 +24,15 @@ Parce que cela est également risqué, les mises à jour doivent être une opér
 
 7
 00:00:19,500 --> 00:00:22,960
-Chez Ubuntu, on a construit une plateforme qui résout ces problèmes.
+Chez Ubuntu, on a inventé une plateforme qui résout ces problèmes.
 
 8
 00:00:23,160 --> 00:00:26,000
-Ce que on a appelé snaps et snapcraft.
+Qu'on a appelé snaps et snapcraft.
 
 9
 00:00:26,260 --> 00:00:29,160
-Il met le contrôle de la publication dans les mains des vendeurs,
+Elle met le contrôle de la publication dans les mains des vendeurs,
 
 10
 00:00:29,300 --> 00:00:31,900
@@ -40,19 +40,19 @@ qui donne les outils pour fournir des mises à jour à une fréquence élevée
 
 11
 00:00:32,020 --> 00:00:34,520
-sans mettre en péril l'expérience de la part de l'utilisateur final.
+sans mettre en péril l'expérience de l'utilisateur final.
 
 12
 00:00:34,820 --> 00:00:37,220
-Ces mises à jour ne nécessitent aucune interaction de la part de l'utilisateur final,
+Ces mises à jour ne nécessitent aucune interaction de l'utilisateur final,
 
 13
 00:00:37,240 --> 00:00:38,880
-même quand ils échouent
+même quand elles échouent
 
 14
 00:00:39,000 --> 00:00:43,040
-Si vous construisez un logiciel pour fonctionner sur Ubuntu 14.04 ou 16.04 aujourd'hui,
+Si vous construisez un logiciel pour Ubuntu 14.04 ou 16.04 aujourd'hui,
 
 15
 00:00:43,220 --> 00:00:45,060
@@ -76,11 +76,11 @@ Seulement trois strophes: métadonnées, confinement et définitions de construc
 
 20
 00:00:58,940 --> 00:01:01,940
-Les plugins existent pour les systèmes de construction et les langages populaires.
+Des plugins existent déjà pour les systèmes de construction et les langages populaires.
 
 21
 00:01:02,540 --> 00:01:05,880
-C'est facilement extensible en ajoutant des commandes shell dans le yaml.
+C'est facilement extensible en ajoutant des commandes shell.
 
 22
 00:01:05,880 --> 00:01:08,960
@@ -120,11 +120,11 @@ et support pour la construction et le test de Windows et Mac
 
 31
 00:01:36,040 --> 00:01:37,920
-atterrira bientôt.
+sera bientôt disponible.
 
 32
 00:01:37,920 --> 00:01:42,120
-Snaps sont comme un conteneur, mais sans les bagages d'une image OS inclus.
+Les paquets snaps sont similaires aux "containers", mais sans la lourdeur d'une image OS incluse par container
 
 33
 00:01:42,540 --> 00:01:46,660
@@ -160,11 +160,11 @@ Les utilisateurs vont automatiquement revenir en arrière,
 
 41
 00:02:08,740 --> 00:02:10,540
-et vous pouvez repoint le canal stable
+et vous pouvez repoint le chaîne stable
 
 42
 00:02:10,540 --> 00:02:12,154
-lors d'une révision précédente.
+à une révision précédente.
 
 43
 00:02:12,220 --> 00:02:16,520
