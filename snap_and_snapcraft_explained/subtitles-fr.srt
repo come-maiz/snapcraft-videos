@@ -1,0 +1,319 @@
+les 1
+00:00:01,480 --> 00:00:04,940
+Les méthodes traditionnelles de livraison de logiciels sous Linux sont problématiques.
+
+2
+00:00:04,940 --> 00:00:07,460
+Les paquets écrivent partout dans le système de fichiers.
+
+3
+00:00:07,520 --> 00:00:10,600
+Ils nécessitent du code complexe pour gérer l'installation et les mises à jour.
+
+4
+00:00:10,860 --> 00:00:12,140
+Ils ne sont pas transactionnels,
+
+5
+00:00:12,140 --> 00:00:14,640
+s'ils échouent, l'utilisateur final doit ramasser les pièces.
+
+6
+00:00:15,460 --> 00:00:19,020
+Parce que cela est également risqué, les mises à jour doivent être une opération manuelle.
+
+7
+00:00:19,500 --> 00:00:22,960
+Chez Ubuntu, on a inventé une plateforme qui résout ces problèmes.
+
+8
+00:00:23,160 --> 00:00:26,000
+Qu'on a appelé snaps et snapcraft.
+
+9
+00:00:26,260 --> 00:00:29,160
+Elle met le contrôle de la publication dans les mains des vendeurs,
+
+10
+00:00:29,300 --> 00:00:31,900
+qui donne les outils pour fournir des mises à jour à une fréquence élevée
+
+11
+00:00:32,020 --> 00:00:34,520
+sans mettre en péril l'expérience de l'utilisateur final.
+
+12
+00:00:34,820 --> 00:00:37,220
+Ces mises à jour ne nécessitent aucune interaction de l'utilisateur final,
+
+13
+00:00:37,240 --> 00:00:38,880
+même quand elles échouent
+
+14
+00:00:39,000 --> 00:00:43,040
+Si vous construisez un logiciel pour Ubuntu 14.04 ou 16.04 aujourd'hui,
+
+15
+00:00:43,220 --> 00:00:45,060
+c'est le meilleur moyen de le distribuer.
+
+16
+00:00:45,480 --> 00:00:48,380
+Il y a déjà plus de mille applications de ce type
+
+17
+00:00:48,460 --> 00:00:50,660
+disponible auprès de centaines de développeurs
+
+18
+00:00:51,920 --> 00:00:53,920
+Le format est simple et déclaratif.
+
+19
+00:00:53,920 --> 00:00:58,060
+Seulement trois strophes: métadonnées, confinement et définitions de construction.
+
+20
+00:00:58,940 --> 00:01:01,940
+Des plugins existent déjà pour les systèmes de construction et les langages populaires.
+
+21
+00:01:02,540 --> 00:01:05,880
+C'est facilement extensible en ajoutant des commandes shell.
+
+22
+00:01:05,880 --> 00:01:08,960
+Vous pouvez regrouper vos dépendances pour des comportements prévisibles.
+
+23
+00:01:09,240 --> 00:01:11,760
+Même pour les gros morceaux, comme les bases de données,
+
+24
+00:01:11,760 --> 00:01:16,020
+les définitions de build peuvent également prendre des binaires ou des artefacts pré-construits.
+
+25
+00:01:16,440 --> 00:01:20,200
+On offre de nombreux composants génériques que vous pouvez construire en plus de
+
+26
+00:01:20,360 --> 00:01:22,620
+comme une batterie de serveurs et un clustering LXD
+
+27
+00:01:22,980 --> 00:01:27,520
+On facilite également l'intégration des outils dans votre système de construction et de CI existant.
+
+28
+00:01:28,260 --> 00:01:32,220
+Construire une fois, publier une fois, fonctionner sur de nombreux systèmes Linux
+
+29
+00:01:32,220 --> 00:01:33,660
+Cette liste est en croissance,
+
+30
+00:01:33,660 --> 00:01:36,040
+et support pour la construction et le test de Windows et Mac
+
+31
+00:01:36,040 --> 00:01:37,920
+sera bientôt disponible.
+
+32
+00:01:37,920 --> 00:01:42,120
+Les paquets snaps sont similaires aux "containers", mais sans la lourdeur d'une image OS incluse par container
+
+33
+00:01:42,540 --> 00:01:46,660
+Cela signifie que vous pouvez même installer des snaps dans des conteneurs lxd ou docker.
+
+34
+00:01:47,120 --> 00:01:49,460
+Le modèle de confinement peut être ajusté.
+
+35
+00:01:49,460 --> 00:01:52,160
+Vous avez besoin d'un accès Internet ou d'un accès au matériel?
+
+36
+00:01:52,160 --> 00:01:54,340
+Vous pouvez simplement ajouter cela au yaml.
+
+37
+00:01:54,340 --> 00:01:58,080
+Vous pouvez même empaqueter des éditeurs et des applications nécessitant un accès complet au système de fichiers
+
+38
+00:01:58,120 --> 00:02:02,400
+en changeant une ligne du yaml à ce que nous appelons le confinement classique
+
+39
+00:02:03,040 --> 00:02:06,560
+Les contrôles de santé permettent à toute mise à jour de se valider elle-même.
+
+40
+00:02:06,820 --> 00:02:08,740
+Les utilisateurs vont automatiquement revenir en arrière,
+
+41
+00:02:08,740 --> 00:02:10,540
+et vous pouvez repoint le chaîne stable
+
+42
+00:02:10,540 --> 00:02:12,154
+à une révision précédente.
+
+43
+00:02:12,220 --> 00:02:16,520
+Les utilisateurs finaux peuvent auditer les transactions à l'aide de la commande snap changes.
+
+44
+00:02:16,520 --> 00:02:20,620
+Les canaux sont un moyen pour l'utilisateur final de s'abonner à un niveau de risque.
+
+45
+00:02:20,860 --> 00:02:23,600
+Vous pouvez automatiquement poser vos constructions CI sur le bord,
+
+46
+00:02:23,660 --> 00:02:25,800
+où votre AQ et les développeurs peuvent examiner.
+
+47
+00:02:26,160 --> 00:02:29,080
+Vous pouvez promouvoir ces mêmes modifications sur des canaux plus stables
+
+48
+00:02:29,180 --> 00:02:30,260
+avec une commande unique.
+
+49
+00:02:30,900 --> 00:02:33,300
+Vous pouvez configurer des programmes bêta qui, une fois fermés
+
+50
+00:02:33,300 --> 00:02:35,100
+ramener les utilisateurs à l'état stable.
+
+51
+00:02:35,800 --> 00:02:38,540
+Pas plus longue queue de rejets à soutenir.
+
+52
+00:02:38,540 --> 00:02:41,260
+Les pistes vous permettent d'introduire des changements incompatibles,
+
+53
+00:02:41,260 --> 00:02:43,240
+sans casser les utilisateurs existants.
+
+54
+00:02:43,520 --> 00:02:47,480
+Les pistes peuvent être nommées n'importe quoi 2.0, 3.2 ou banane.
+
+55
+00:02:48,040 --> 00:02:52,340
+Chaque piste a ses propres canaux stables, candidats, bêta et périphériques.
+
+56
+00:02:52,500 --> 00:02:55,100
+Les systèmes se mettent à jour automatiquement quatre fois par jour,
+
+57
+00:02:55,100 --> 00:02:56,700
+ou à la demande de l'utilisateur.
+
+58
+00:02:56,700 --> 00:02:58,500
+Les mises à jour sont livrées sous forme de deltas.
+
+59
+00:02:58,980 --> 00:03:01,820
+Nous conduisons cela à partir de l'espace IOT, où vous devez mettre à jour
+
+60
+00:03:01,900 --> 00:03:03,960
+ce réfrigérateur intelligent pour les correctifs de sécurité,
+
+61
+00:03:03,960 --> 00:03:05,360
+mais ne peut pas risquer de le bousiller.
+
+62
+00:03:05,800 --> 00:03:08,380
+Quatre fois par jour n'est pas assez rapide toutes les temps
+
+63
+00:03:08,380 --> 00:03:10,000
+Les mises à jour Push arrivent bientôt.
+
+64
+00:03:10,800 --> 00:03:14,340
+Le noyau et le système d'exploitation de base sont également livrés sous forme de snaps.
+
+65
+00:03:14,800 --> 00:03:17,140
+Le noyau et le système d'exploitation reviennent en cas d'échec,
+
+66
+00:03:17,140 --> 00:03:18,340
+tout comme les applications.
+
+67
+00:03:18,460 --> 00:03:21,220
+Le système redémarre à un bon état connu.
+
+68
+00:03:21,700 --> 00:03:25,080
+Le code du fournisseur qui s'exécute sur les périphériques de périphérie est protégé contre les manipulations.
+
+69
+00:03:25,260 --> 00:03:27,920
+Un bon hôte pour les conteneurs de dockers et,
+
+70
+00:03:27,920 --> 00:03:30,060
+comme c'est le cas avec d'autres applications sur la plate-forme,
+
+71
+00:03:30,060 --> 00:03:33,600
+l'accrochage docker est publié directement par docker eux-mêmes.
+
+72
+00:03:33,860 --> 00:03:36,720
+Tout comme le cloud sauve les entreprises de la planification des centres de données,
+
+73
+00:03:36,880 --> 00:03:38,980
+on veut que la livraison de mise à jour soit résolue
+
+74
+00:03:39,000 --> 00:03:42,340
+afin que les gens puissent poursuivre leurs tâches de différenciation de niveau supérieur.
+
+75
+00:03:42,600 --> 00:03:43,820
+Vos commentaires sont bienvenus.
+
+76
+00:03:43,820 --> 00:03:45,920
+Contactez-nous si vous avez des questions ou des pensées
+
+77
+00:03:45,960 --> 00:03:48,020
+sur la façon dont on pourrait mieux vous soutenir.
+
+78
+00:03:48,120 --> 00:03:49,300
+C'est aussi open source.
+
+79
+00:03:49,520 --> 00:03:53,240
+Vous pouvez obtenir snapd et snapcraft sur GitHub, si vous voulez contribuer.
+
+80
+00:03:53,500 --> 00:03:57,440
+En savoir plus sur snapcraft.io.
