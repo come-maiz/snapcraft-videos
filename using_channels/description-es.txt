@@ -1,0 +1,11 @@
+Usando canales para soportar versiones publicadas
+
+Los canales están diseñados para soportar el proceso de publicación de sofware.
+https://snapcraft.io/docs/build-snaps/publish
+
+Encuentre más en http://snapcraft.io/
+Subscríbase a nuestro canal en YouTube: https://youtube.com/snapcraftio
+Síganos en Twitter: http://twitter.com/snapcraft.io
+Vea nuestras actualizaciones en G+: https://plus.google.com/+snapcraftio
+Discuta esto en nuestros foros: http://forum.snapcraft.io
+Obtenga actualizaciones a través de Telegram: https://t.me/snapcraftio

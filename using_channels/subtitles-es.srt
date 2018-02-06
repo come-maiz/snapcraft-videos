@@ -1,0 +1,91 @@
+1
+00:00:00,820 --> 00:00:04,780
+La tienda de Snaps brinda cuatro canales en los cuales su software puede ser publicado.
+
+2
+00:00:04,780 --> 00:00:08,040
+Se llaman «stable», «candidate», «beta» y «edge».
+
+3
+00:00:08,460 --> 00:00:11,480
+Cada canal significa un nivel de riesgo para la usuaria.
+
+4
+00:00:11,480 --> 00:00:15,320
+entonces el software publicado ahí debería tener la estabilidad apropiada.
+
+5
+00:00:15,320 --> 00:00:19,980
+Como desarrolladora, usted puede publicar diferentes versiones de su snap en cada canal.
+
+6
+00:00:20,720 --> 00:00:23,580
+Publique de forma automática directamente desde cada «commit» de Github,
+
+7
+00:00:23,740 --> 00:00:27,120
+al canal «edge» desde build.snapcraft.io,
+
+8
+00:00:27,140 --> 00:00:30,620
+desde Travis, o de forma manual usando el comando snapcraft.
+
+9
+00:00:30,620 --> 00:00:32,940
+Tome versiones soportadas de su software
+
+10
+00:00:33,020 --> 00:00:35,640
+y envíelas de forma manual al canal «stable».
+
+11
+00:00:35,640 --> 00:00:38,800
+Usuarias buscando estabilidad sobre las funcionalidades más recientes
+
+12
+00:00:38,960 --> 00:00:40,960
+pueden subscribirse a ese canal.
+
+13
+00:00:40,960 --> 00:00:44,700
+Sus equipos de integración contínua y aseguramiento de la calidad pueden subscribirse a «edge»
+
+14
+00:00:44,700 --> 00:00:47,480
+para obtener las versiones más recientes de forma automática.
+
+15
+00:00:47,660 --> 00:00:49,920
+Durante la preparación de una versión puede usar el canal «beta»
+
+16
+00:00:49,920 --> 00:00:52,700
+para entregar una nueva versión a su equipo de pruebas
+
+17
+00:00:52,700 --> 00:00:54,700
+antes de la publicación.
+
+18
+00:00:54,700 --> 00:00:57,680
+Usuarias pueden escoger el canal «beta» durante este período,
+
+19
+00:00:57,680 --> 00:01:00,360
+y cuando las pruebas estén completas, esté lista para publicar,
+
+20
+00:01:00,360 --> 00:01:02,040
+se moverán con usted.
+
+21
+00:01:02,120 --> 00:01:05,980
+De forma opcional, también puede usar el canal «candidate» antes de una publicación.
+
+22
+00:01:06,280 --> 00:01:09,860
+Los canales están diseñados para ser flexibles y soportar su proceso de desarrollo.
+
+23
+00:01:10,360 --> 00:01:13,380
+Encuentre más en snapcraft.io.
