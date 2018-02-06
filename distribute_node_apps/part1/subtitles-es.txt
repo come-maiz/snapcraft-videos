@@ -1,0 +1,63 @@
+1
+00:00:00,640 --> 00:00:05,430
+Snapcraft hace sencillo empaquetar y distribuir a usuarias de Linux sus aplicaciones escritas en node.
+
+2
+00:00:07,090 --> 00:00:12,269
+Si aún no tiene el comando snapcraft, necesita instalarlo. Hay un enlace en la descripción, abajo.
+
+3
+00:00:14,559 --> 00:00:20,008
+Primero necesitamos revisar si el nombre de la aplicación está disponible en la tienda, y registrarlo para nuestro uso
+
+4
+00:00:21,279 --> 00:00:24,209
+Si el nombre está tomado, no se preocupe. Sólo escoja otro.
+
+5
+00:00:26,840 --> 00:00:31,840
+Ahora crearemos una plantilla de snapcraft yaml, que editará para describir la aplicación.
+
+6
+00:00:33,290 --> 00:00:37,720
+Agregue los metadatos que las usuarias verán al buscar su aplicación en la tienda.
+
+7
+00:00:39,500 --> 00:00:43,059
+Si hubiese registrado un nombre distinto antes, asegúrese de usarlo aquí.
+
+8
+00:00:47,800 --> 00:00:51,079
+Ahora, agregue una parte para describir cómo se construye su aplicación.
+
+9
+00:00:53,730 --> 00:00:58,790
+Use el plugin de nodejs de snapcraft, que sabe cómo manejer aplicaciones nodejs.
+
+10
+00:01:02,120 --> 00:01:07,330
+Empezaremos con devmode, que significa que la aplicación no está confinada. Podemos asegurarla luego.
+
+11
+00:01:12,590 --> 00:01:16,749
+Finalmente, agregamos una sección de app para definir los comandos contenidos en el snap.
+
+12
+00:01:21,920 --> 00:01:25,209
+Eso es todo. Podemos crear un snap con el comando snapcraft.
+
+13
+00:01:38,590 --> 00:01:42,470
+Instale y pruebe el paquete sin firmar de forma local con snap install.
+
+14
+00:01:46,010 --> 00:01:49,730
+Y envíelo a la tienda con snapcraft push.
+
+15
+00:02:00,610 --> 00:02:05,020
+¡Genial! Ahora puede decirle a su comunidad que instale el snap de su aplicación.
+
+16
+00:02:08,220 --> 00:02:10,580
+Encuentre más información en snapcraft punto io

@@ -1,0 +1,17 @@
+Distribuya fácilmente aplicaciones node a usuarias de Linux
+
+Construir snaps de aplicaciones node es fácil. Este vídeo muestra cómo.
+
+Parte 1: https://www.youtube.com/watch?v=S3YvRALc2C0
+Parte 2: https://www.youtube.com/watch?v=ymO49VCY1BQ
+
+Instale snapcraft: https://snapcraft.io/docs/build-snaps/
+
+Registro en la tienda: http://dashboard.snapcraft.io/
+
+Encuentre más en http://snapcraft.io/
+Subscríbase a nuestro canal en YouTube: https://youtube.com/snapcraftio
+Síganos en Twitter: http://twitter.com/snapcraft.io
+Vea nuestras actualizaciones en G+: https://plus.google.com/+snapcraftio
+Discuta esto en nuestros foros: http://forum.snapcraft.io
+Obtenga actualizaciones a través de Telegram: https://t.me/snapcraftio

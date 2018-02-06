@@ -8,6 +8,9 @@
    * German:
      * [Description](part1/description-de.txt)
      * [Subtitles](part1/subtitles-de.srt)
+   * Spanish:
+     * [Description](part1/description-es.txt)
+     * [Subtitles](part1/subtitles-es.srt)
 
 # Part 2: Preparing node snap for stable releases
 
