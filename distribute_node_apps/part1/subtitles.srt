@@ -36,7 +36,7 @@ We use the node.js plugin snapcraft knows how to handle nodejs applications
 
 10
 00:01:02,120 --> 00:01:07,330
-We'll start with Devmode which means the application is unconfined. We can tighten that up later
+We'll start with devmode which means the application is unconfined. We can tighten that up later
 
 11
 00:01:12,590 --> 00:01:16,749
@@ -61,4 +61,3 @@ Great! Now you can tell your community to snap install your application
 16
 00:02:08,220 --> 00:02:10,580
 Find out more at snapcraft dot io
-

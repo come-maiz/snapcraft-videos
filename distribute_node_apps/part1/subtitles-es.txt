@@ -32,7 +32,7 @@ Ahora, agregue una parte para describir cómo se construye su aplicación.
 
 9
 00:00:53,730 --> 00:00:58,790
-Use el plugin de nodejs de snapcraft, que sabe cómo manejer aplicaciones nodejs.
+Usamos el plugin de node.js de snapcraft, que sabe cómo manejer aplicaciones nodejs.
 
 10
 00:01:02,120 --> 00:01:07,330
