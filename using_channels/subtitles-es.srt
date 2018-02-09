@@ -56,7 +56,7 @@ para obtener las versiones más recientes de forma automática.
 
 15
 00:00:47,660 --> 00:00:49,920
-Durante la preparación de una versión puede usar el canal «beta»
+Durante el pre-lanzamiento usted puede usar el canal «beta»
 
 16
 00:00:49,920 --> 00:00:52,700
@@ -84,7 +84,7 @@ De forma opcional, también puede usar el canal «candidate» antes de una publi
 
 22
 00:01:06,280 --> 00:01:09,860
-Los canales están diseñados para ser flexibles y soportar su proceso de desarrollo.
+Los canales están diseñados para ser flexibles y soportar su proceso de publicación.
 
 23
 00:01:10,360 --> 00:01:13,380
