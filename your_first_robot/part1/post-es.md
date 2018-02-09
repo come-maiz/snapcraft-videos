@@ -36,21 +36,21 @@ Ubuntu Core es una distribución especializada de Ubuntu que está dedicada a di
 
 Ubuntu Core es un poco diferente a Raspbian. ¡Es incluso un poco diferente a Ubuntu clásico (o Ubuntu MATE)! Empecemos instalándolo, y explicaré a qué me refiero.
 
-## Step 1: Instalar Ubuntu Core
+## Paso 1: Instalar Ubuntu Core
 
 Esto ya está bien documentado, pero quiero agregar unas cuantas notas antes de que siga los pasos. Antes que todo, se requiren un teclado y un monitor, pero solo para el primer arranque. A diferencia de Raspbian o Ubuntu MATE, no hay nombre de usuario ni contraseña predefinidas, o un proceso de instalación en el que se cree un usuario. Ni siquiera utiliza un ratón-- esto es más como Ubuntu Server. De hecho, no hay un inicio de sesión local: todo se hace a través de SSH (una sesión remota a través de la red), con claves criptográficas en lugar de contraseñas. Esto es parte de la filosofía de «seguridad predeterminada» de Ubuntu Core. Hay muchos ejemplos de credenciales predefinidas siendo abusadas (vea la [red de bots Mirai](https://en.wikipedia.org/wiki/Mirai_(malware))), y como un sistema operativo enfocado en IoT, ¡Ubuntu Core no puede tener eso! Esa es la razón por la que verá que una cuenta de Ubuntu SSO y claves SSH son prerrequisitos en la guía de instalación (no se preocupe, ambas son fáciles, ¡y su robot estará super seguro!).
 
 Bueno, sigamos la [guía de instalación de Raspberry Pi 2 o 3](https://developer.ubuntu.com/core/get-started/raspberry-pi-2-3) (comente aquí si tiene alguna pregunta). Al final de este paso, usted tendrá Ubuntu Core instalado, y debería poder entrar al Pi a través de SSH.
 
-## Step 2: Preparar el ambiente de desarrollo
+## Paso 2: Preparar el ambiente de desarrollo
 
-Como un sistema operativo enfocado en IoT, Ubuntu Core usa un formato de empaquetamiento diferente al de Raspbian y Ubuntu clásico. En lugar de usar paquetes Debian (que involucran familiaridad con herramientas como **apt**), Ubuntu Core usa un formato de paquetes llamado **snaps**. Los snaps son mucho más robustos cuando se trata de actualizaciones y seguridad, ambas importantes para dispositivos IoT, incluyendo robots. No hay **apt** en este sistema. Para darle una prueba de cómo es usar los comandos «snap», asegúrese que su sistema está completamente actualizado corriendno **snap refresh**.
+Como un sistema operativo enfocado en IoT, Ubuntu Core usa un formato de empaquetamiento diferente al de Raspbian y Ubuntu clásico. En lugar de usar paquetes Debian (que involucran familiaridad con herramientas como **apt**), Ubuntu Core usa un formato de paquetes llamado **Snaps**. Los snaps son mucho más robustos cuando se trata de actualizaciones y seguridad, ambas importantes para dispositivos IoT, incluyendo robots. No hay **apt** en este sistema. Para darle una prueba de cómo es usar los comandos «snap», asegúrese que su sistema está completamente actualizado corriendo **snap refresh**.
 
 Entonces, ¿cómo instala una todas las herramientas de desarrollo a las que está acostumbrada? Hay un snap especial para eso, llamado **classic**, que le da acceso a todas su herramientas conocidas (incluyendo **apt**).
 
-Instale el snap **classic** siguiendo la sección de «developing on target» (desarrollando en el mismo sistema objetivo) de la [guía de configuración de desarrollo](https://developer.ubuntu.com/core/get-started/developer-setup) (de nuevo, comente aquí si tiene preguntas). Al final de este paso, usted debe poder ejecutar **sudo classic** y obtener acceso a un shell en el que puede instalar debs, ¡el cual usaremos para hackear en nuestro robot! Luego crearemo su propio snap para controlar el robot, lo que hace super fácil.
+Instale el snap **classic** siguiendo la sección de «developing on target» (desarrollando en el mismo sistema objetivo) de la [guía de configuración de desarrollo](https://developer.ubuntu.com/core/get-started/developer-setup) (de nuevo, comente aquí si tiene preguntas). Al final de este paso, usted debe poder ejecutar **sudo classic** y obtener acceso a un shell en el que puede instalar debs, ¡el cual usaremos para hackear en nuestro robot! Luego crearemos su propio snap para controlar el robot, lo que hace compartir su proyecto con amistades super fácil.
 
-## Step 3: Hora de CamJam
+## Paso 3: Hora de CamJam
 
 Muy bien, ¡ahora estamos en el punto en el que podemos empezar a seguir las hojas de trabajo de CamJam! ¿Por qué no empezamos con la [primera](https://github.com/CamJam-EduKit/EduKit3/raw/master/CamJam%20EduKit%203%20-%20Robotics%20Worksheet%201%20-%20Introduction.pdf)?. Esta en realidad asume que usted está ejecutando Raspbian, lo que no estamos haciendo, entonces aunque puede leerla toda, vamos a saltar directo al paso «Identifying your Version of Raspbian» (Identificando su versión de Raspbian). No, aún no estamos usando Raspbian, pero esta sección tiene un punto interesante que quiero asegurarme de que note:
 
