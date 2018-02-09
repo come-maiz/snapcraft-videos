@@ -13,7 +13,7 @@ Hace algún tiempo hice una [serie de blog/vídeos](https://kyrofa.com/posts/fro
 
 En mi serie de robótica anterior, una de las razones por las que el Turtlebot era tan caro es porque tiene una enorme cantidad de software ya escrito, como controladores ROS para movimiento, leer de sensores, etc. Este pequeño robot es diferente: necesitaremos escribir todo por nosotras mismas. Por suerte, la gente de CamJam brinda unas [hojas de trabajo](http://camjam.me/?page_id=1035) para introducirle a la plataforma y ayudarle a empezar a escribir software para controlar las ruedas, leer el sensor ultrasónico, y más. Podemos aprovecharlas para hacer funcionar el robot de forma rápida. Entonces, a través de esta serie cubriremos los siguientes temas:
 
-* [Su primer robot: introduccion al Robot Operating System [2/5]](https://kyrofa.com/posts/your-first-robot-introduction-to-the-robot-operating-system-2-5)
+* [Su primer robot: introducción al Robot Operating System [2/5]](https://kyrofa.com/posts/your-first-robot-introduction-to-the-robot-operating-system-2-5)
   * ¿Qué es el Robot Operating System (ROS)? ¿Por qué vale la pena aprenderlo? ¿Cómo usarlo?
 * Su primer robot: el control remoto [3/5]
   * Obteniendo datos del control inalámbrico y usándolos en ROS.
@@ -22,15 +22,15 @@ En mi serie de robótica anterior, una de las razones por las que el Turtlebot e
 * Su primer robot: compartiendo con otras [5/5]
   * ¿Cómo se arranca el sistema sin tener que entrar por SSH? ¿Cómo compartir su producto final con sus amistades?
 
-Como mencioné, el las hojas de trabajo de CamJam nos llevarán lejos hacia lo que necesitamos aprender para esta serie. Sin embargo, en lugar de usar Raspbian, vamos a usar Ubuntu Core. Las hojas de trabajo aún son perfectamente aplicables, y lo probaré guiándole a través de la configuración de Ubuntu Core en su Raspberry Pi, y luego seguiremos una de las hojas de trabajo de CamJam. Note que esta también es una serie de vídeos, siéntase libre de ver la versión en vídeo de este post (con subtítulos en Español):
+Como mencioné, las hojas de trabajo de CamJam nos llevarán lejos hacia lo que necesitamos aprender para esta serie. Sin embargo, en lugar de usar Raspbian, vamos a usar Ubuntu Core. Las hojas de trabajo aún son perfectamente aplicables, y lo probaré guiándole a través de la configuración de Ubuntu Core en su Raspberry Pi, y luego seguiremos una de las hojas de trabajo de CamJam. Note que esta también es una serie de vídeos, siéntase libre de ver la versión en vídeo de este post (con subtítulos en Español):
 
 [![Vídeo: Su primer robot, parte 1: una guía introductoria a ROS y Ubuntu Core](http://img.youtube.com/vi/KidVVqbsIHI/0.jpg)](http://www.youtube.com/watch?v=KidVVqbsIHI)
 
 ## Prerrequisitos
 
-Aunque esto es una introducción, quiero ser claro sobre algunas de las cosas que estoy asumiendo. Esta serie asume que usted está familiarizada un poco con Ubuntu (o alguna otra distro basada en Debian, como Raspbian), en particular, usando la línea de comandos. No espero que sea una profesional escriiendo scripts, pero debería saber cómo navegar el sistema de archivos y usar editores de terminal (vi, nano, etc.)
+Aunque esto es una introducción, quiero ser claro sobre algunas de las cosas que estoy asumiendo. Esta serie asume que usted está familiarizada un poco con Ubuntu (o alguna otra distro basada en Debian, como Raspbian), en particular, usando la línea de comandos. No espero que sea una profesional escribiendo scripts, pero debería saber cómo navegar el sistema de archivos y usar editores de terminal (vi, nano, etc.)
 
-## ¿Qué es Uuntu Core?
+## ¿Qué es Ubuntu Core?
 
 Ubuntu Core es una distribución especializada de Ubuntu que está dedicada a dispositivos que entran en saco de «Internet de las cosas» (IoT, por sus siglas en inglés). Esto incluye enrutadores, termostatos y, por supuesto, robots. Espero que, al introducirle al sistema operativo (y herramientas como ROS) que utilizan las profesionales para hacer su robots, ¡el camino quede listo para que usted logre grandes cosas en este campo!
 
@@ -48,11 +48,11 @@ Como un sistema operativo enfocado en IoT, Ubuntu Core usa un formato de empaque
 
 Entonces, ¿cómo instala una todas las herramientas de desarrollo a las que está acostumbrada? Hay un snap especial para eso, llamado **classic**, que le da acceso a todas su herramientas conocidas (incluyendo **apt**).
 
-Instale el snap **classic** siguiendo la sección de «developing on target» (desarrollando en el mismo sistema objetivo) de la [guía de configuración de desarrollo](https://developer.ubuntu.com/core/get-started/developer-setup) (de nuevo, comente aquí si tiene preguntas). Al final de este paso, usted debe poder ejecutar **sudo classic** y obtener acceso a un shel en el que puede instalar debs, ¡el cual usaremos para hackear en nuestro robot! Luego crearemo su propio snap para controlar el robot, lo que hace super fácil.
+Instale el snap **classic** siguiendo la sección de «developing on target» (desarrollando en el mismo sistema objetivo) de la [guía de configuración de desarrollo](https://developer.ubuntu.com/core/get-started/developer-setup) (de nuevo, comente aquí si tiene preguntas). Al final de este paso, usted debe poder ejecutar **sudo classic** y obtener acceso a un shell en el que puede instalar debs, ¡el cual usaremos para hackear en nuestro robot! Luego crearemo su propio snap para controlar el robot, lo que hace super fácil.
 
 ## Step 3: Hora de CamJam
 
-Muy bien, ¡ahora estamos en el punto en el que podemos empezar a seguir las hojas de trabajo de CamJam! ¿Por qué no empezamos con la [primera](https://github.com/CamJam-EduKit/EduKit3/raw/master/CamJam%20EduKit%203%20-%20Robotics%20Worksheet%201%20-%20Introduction.pdf). Esta en realidad asume que usted está ejecutando Raspbian, lo que no estamos haciendo, entonces aunque puede leerla toda, vamos a saltar directo al paso «Identifying your Version of Raspbian» (Identificando su versión de Raspbian). No, aún no estamos usando Raspbian, pero esta sección tiene un punto interesante que quiero asegurarme de que note:
+Muy bien, ¡ahora estamos en el punto en el que podemos empezar a seguir las hojas de trabajo de CamJam! ¿Por qué no empezamos con la [primera](https://github.com/CamJam-EduKit/EduKit3/raw/master/CamJam%20EduKit%203%20-%20Robotics%20Worksheet%201%20-%20Introduction.pdf)?. Esta en realidad asume que usted está ejecutando Raspbian, lo que no estamos haciendo, entonces aunque puede leerla toda, vamos a saltar directo al paso «Identifying your Version of Raspbian» (Identificando su versión de Raspbian). No, aún no estamos usando Raspbian, pero esta sección tiene un punto interesante que quiero asegurarme de que note:
 
 Ubuntu Core, al igual que Debian Wheezy, considera que el acceso a GPIO a través de mapeo de memoria es una operación privilegiada. Como resultado, cualquier código a lo largo de estas hojas de trabajo que usa GPIO necesitará que lo ejecute con **sudo**.
 
@@ -79,4 +79,4 @@ $ sudo apt install gcc python3-dev python3-pip python3-setuptools
 $ pip3 install RPi.GPIO
 ```
 
-También recuerde que necesitará usar sudo para cualquier script de python que utilice GPIO. El [siguiente post en esta serie](https://kyrofa.com/posts/your-first-robot-introduction-to-the-robot-operating-system-2-5) sera una introducción a ROS, ¿qué es?, ¿por qué es útil?, ¿por qué necesita conocerlo? y ¿cómo obtenerlo en su Raspberry Pi con Ubuntu Core.
+También recuerde que necesitará usar sudo para cualquier script de Python que utilice GPIO. El [siguiente post en esta serie](https://kyrofa.com/posts/your-first-robot-introduction-to-the-robot-operating-system-2-5) sera una introducción a ROS, ¿qué es?, ¿por qué es útil?, ¿por qué necesita conocerlo? y ¿cómo obtenerlo en su Raspberry Pi con Ubuntu Core?.
