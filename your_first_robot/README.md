@@ -11,3 +11,10 @@
 - [Video](https://youtu.be/Sw33EbZHris)
 - [Description](part2/description.txt)
 - [Script](part2/script.txt)
+
+
+# Part 3: The controller
+
+- [Video](https://youtu.be/xRK-tOgzeUo)
+- [Description](part3/description.txt)
+- [Script](part3/script.txt)

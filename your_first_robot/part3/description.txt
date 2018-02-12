@@ -1,0 +1,11 @@
+Move beyond the CamJam worksheets, and work toward having your robot remotely controlled by focusing on getting data out of the wireless controller and into ROS.
+
+This video is part 3 of a series. It corresponds to
+[this blog post](https://insights.ubuntu.com/2018/02/11/your-first-robot-the-controller-3-5/).
+
+Find out more at http://snapcraft.io/
+Subscribe to our YouTube channel: https://youtube.com/snapcraftio
+Follow us on Twitter: http://twitter.com/snapcraft.io
+See our updates on G+: https://plus.google.com/+snapcraftio
+Discuss this on our forums: http://forum.snapcraft.io
+Get updates via Telegram: https://t.me/snapcraftio
