@@ -4,3 +4,10 @@
 - [Video](https://youtu.be/KidVVqbsIHI)
 - [Description](part1/description.txt)
 - [Script](part1/script.txt)
+
+
+# Part 2: Introduction to the Robot Operating System
+
+- [Video](https://youtu.be/Sw33EbZHris)
+- [Description](part2/description.txt)
+- [Script](part2/script.txt)
