@@ -4,3 +4,4 @@
 - [Video](https://youtu.be/KidVVqbsIHI)
 - [Description](part1/description.txt)
 - [Script](part1/script.txt)
+- [Subtitles](part1/subtitles.srt)

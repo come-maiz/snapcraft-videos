@@ -1,0 +1,576 @@
+1
+00:00:28,420 --> 00:00:33,300
+This is the CamJam Edukit #3, a super-cheap, build-your-own robotics kit.
+
+2
+00:00:33,300 --> 00:00:36,320
+It is the basis of the new robot series I'm creating
+
+3
+00:00:36,320 --> 00:00:40,800
+meant for adults and kids alike who want an easy introduction to professional robotics
+
+4
+00:00:40,800 --> 00:00:43,660
+without needing to shell out hundreds or even thousands of dollars.
+
+5
+00:00:43,660 --> 00:00:47,440
+In fact, all the hardware required costs less than $100.
+
+6
+00:00:47,440 --> 00:00:49,540
+It's cheap enough to be a Christmas present!
+
+7
+00:00:49,540 --> 00:00:53,460
+At the end of this series, you'll be driving your robot around with a remote control
+
+8
+00:00:53,460 --> 00:00:55,940
+using the Robot Operating System (or "ROS"),
+
+9
+00:00:55,940 --> 00:00:59,160
+with the road paved toward making it completely autonomous.
+
+10
+00:00:59,160 --> 00:01:02,140
+You'll also have the software you wrote packaged as a snap,
+
+11
+00:01:02,140 --> 00:01:04,380
+which means that, with a single command,
+
+12
+00:01:04,380 --> 00:01:07,800
+you can share your version of the software for this series with your friends.
+
+13
+00:01:07,920 --> 00:01:09,760
+This is part 1 of the series.
+
+14
+00:01:09,760 --> 00:01:11,180
+It's also a blog series--
+
+15
+00:01:11,180 --> 00:01:13,620
+if you'd prefer to read it, the link is in the description below.
+
+16
+00:01:13,620 --> 00:01:16,500
+In this video, I want to introduce all the hardware involved
+
+17
+00:01:16,500 --> 00:01:18,980
+so you can hurry up and buy it in order to follow along.
+
+18
+00:01:18,980 --> 00:01:21,480
+The computer driving the whole thing is a Raspberry Pi,
+
+19
+00:01:21,480 --> 00:01:26,120
+so I'll also get you up and running with Ubuntu Core so that you can experiment with your new robot.
+
+20
+00:01:26,120 --> 00:01:28,200
+Let's get started with your shopping list.
+
+21
+00:01:28,200 --> 00:01:30,860
+Links for all these items are in the description below.
+
+22
+00:01:30,860 --> 00:01:32,660
+Of course, you need the EduKit.
+
+23
+00:01:32,660 --> 00:01:37,440
+I bought mine from the Pi Hut, based in the UK, for 18 pounds, or about 25 bucks.
+
+24
+00:01:37,440 --> 00:01:39,840
+Not only is it a pretty sweet little kit,
+
+25
+00:01:39,840 --> 00:01:44,940
+they also provide worksheets for introducing you to the platform and getting you started writing software to control it.
+
+26
+00:01:44,960 --> 00:01:48,320
+You'll also need a Raspberry Pi 2 or 3 (I'm using a 2)
+
+27
+00:01:48,320 --> 00:01:49,720
+which is about 35 dollars.
+
+28
+00:01:49,720 --> 00:01:52,800
+In addition, I suggest a battery for the raspberry pi.
+
+29
+00:01:52,800 --> 00:01:57,940
+This is optional, but if you don't have one, your robot will be tethered by the raspberry pi's power supply,
+
+30
+00:01:57,940 --> 00:01:59,580
+which makes it less cool.
+
+31
+00:01:59,860 --> 00:02:01,540
+The one I got was 15 bucks.
+
+32
+00:02:01,540 --> 00:02:03,620
+Finally, you'll need a controller.
+
+33
+00:02:03,700 --> 00:02:06,020
+You can use an Xbox 360 controller,
+
+34
+00:02:06,020 --> 00:02:09,460
+but I got this wireless one from the Pi Hut for 14 pounds,
+
+35
+00:02:09,460 --> 00:02:10,560
+or about 20 dollars.
+
+36
+00:02:10,560 --> 00:02:11,940
+That's everything you'll need,
+
+37
+00:02:11,940 --> 00:02:13,900
+coming out at just under $100 dollars.
+
+38
+00:02:13,900 --> 00:02:15,560
+Now that you've got everything together,
+
+39
+00:02:15,560 --> 00:02:18,620
+let's get started by installing Ubuntu Core on the Raspberry Pi,
+
+40
+00:02:18,620 --> 00:02:20,780
+and then go through one of the CamJam worksheets.
+
+41
+00:02:20,780 --> 00:02:22,580
+While this is meant to be an introduction,
+
+42
+00:02:22,580 --> 00:02:24,780
+I want to be clear on some of the assumptions I'm making.
+
+43
+00:02:24,780 --> 00:02:28,340
+This series assumes you're at least somewhat familiar with the command-line of Ubuntu,
+
+44
+00:02:28,340 --> 00:02:31,160
+or other Debian-based distro, like Raspbian.
+
+45
+00:02:31,160 --> 00:02:33,280
+I don't expect you to be a shell-scripting pro,
+
+46
+00:02:33,280 --> 00:02:38,300
+but you should know how to navigate around the file system and use terminal-based editors like vi and nano.
+
+47
+00:02:38,940 --> 00:02:40,460
+So what is Ubuntu Core?
+
+48
+00:02:40,460 --> 00:02:43,520
+Ubuntu Core is a specialized distribution of Ubuntu
+
+49
+00:02:43,520 --> 00:02:47,760
+that is dedicated to devices that fit into the "Internet of Things" (IoT) bucket.
+
+50
+00:02:47,760 --> 00:02:50,980
+This includes routers, thermostats, and of course, robots.
+
+51
+00:02:50,980 --> 00:02:52,080
+It's my hope that,
+
+52
+00:02:52,080 --> 00:02:56,280
+in introducing you to the operating system and tools that the pros use for their robots,
+
+53
+00:02:56,280 --> 00:03:00,640
+the road is paved for you to go on and accomplish great things in this field!
+
+54
+00:03:00,640 --> 00:03:04,560
+Now, Ubuntu Core is a little different from more traditional distros
+
+55
+00:03:04,560 --> 00:03:06,440
+like classic Ubuntu or Raspbian.
+
+56
+00:03:06,440 --> 00:03:10,000
+Let's get started installing it, and I'll explain what I mean.
+
+57
+00:03:10,000 --> 00:03:12,680
+There's a tutorial for this linked in the description below
+
+58
+00:03:12,680 --> 00:03:14,560
+that you should follow if you haven't done this before,
+
+59
+00:03:14,560 --> 00:03:16,320
+but I'll cover it quickly here as well.
+
+60
+00:03:16,320 --> 00:03:20,040
+You'll need a keyboard and monitor, but only for the first boot.
+
+61
+00:03:20,360 --> 00:03:22,520
+Unlike Raspbian or Ubuntu MATE,
+
+62
+00:03:22,520 --> 00:03:26,880
+there is no default username/password or install process where you create a user.
+
+63
+00:03:26,880 --> 00:03:30,020
+It doesn't even use a mouse-- this is more like Ubuntu Server.
+
+64
+00:03:30,440 --> 00:03:34,520
+In fact, there's no local login at all: it's all done over SSH,
+
+65
+00:03:34,520 --> 00:03:38,940
+a remote login over the network, with cryptographic keys instead of passwords.
+
+66
+00:03:38,940 --> 00:03:42,900
+This is part of Ubuntu Core's "secure by default" philosophy.
+
+67
+00:03:42,900 --> 00:03:46,300
+There are numerous examples of default credentials being abused
+
+68
+00:03:46,300 --> 00:03:47,900
+-- Google the Mirai botnet--
+
+69
+00:03:47,900 --> 00:03:52,000
+and as an IoT-focused operating system, Ubuntu Core can't have that.
+
+70
+00:03:52,280 --> 00:03:57,480
+That's why you'll need a free Ubuntu SSO account and SSH keys in order to login.
+
+71
+00:03:57,480 --> 00:04:00,200
+If you don't already have these, don't worry, they're easy to get,
+
+72
+00:04:00,200 --> 00:04:03,300
+just hit the install guide link in the description for more details.
+
+73
+00:04:03,300 --> 00:04:08,080
+The first thing we need to do is download the Ubuntu Core image for the Raspberry pi 2 or 3.
+
+74
+00:04:08,080 --> 00:04:10,900
+Now let's write it to our SD card, following the guide.
+
+75
+00:04:12,700 --> 00:04:15,500
+Insert that SD card into the raspberry pi,
+
+76
+00:04:15,500 --> 00:04:18,600
+connect the keyboard, monitor, and network cable, and power it up.
+
+77
+00:04:18,600 --> 00:04:22,400
+Once it boots, you'll hit the first boot wizard that you can use to gain access.
+
+78
+00:04:22,400 --> 00:04:28,080
+It's worth pointing out real quick that if you don't need access to the device, you don't need to go through this step--
+
+79
+00:04:28,080 --> 00:04:31,960
+anything preinstalled in the image has already started up and is running.
+
+80
+00:04:31,960 --> 00:04:35,720
+Of course, in our case, we want access, so we'll "press enter to configure".
+
+81
+00:04:36,020 --> 00:04:38,180
+... and enter again...
+
+82
+00:04:38,220 --> 00:04:41,660
+The default network configuration just uses DHCP,
+
+83
+00:04:41,660 --> 00:04:45,140
+which works for me, so I'll hit "tab" to switch to "done" and hit enter.
+
+84
+00:04:45,140 --> 00:04:46,360
+This is the last step,
+
+85
+00:04:46,360 --> 00:04:50,620
+when we tell Ubuntu Core the email address we used for our Ubuntu SSO account.
+
+86
+00:04:50,620 --> 00:04:55,240
+Using this information, Ubuntu Core will fetch the public keys we uploaded to our account,
+
+87
+00:04:55,240 --> 00:04:58,380
+thereby granting us key-based access to this device.
+
+88
+00:04:58,380 --> 00:05:02,180
+And now we can SSH in from our own machine using the directions it gives.
+
+89
+00:05:02,300 --> 00:05:04,780
+As an IoT-focused operating system,
+
+90
+00:05:04,780 --> 00:05:08,700
+Ubuntu Core uses a different packaging format from Raspbian and classic Ubuntu.
+
+91
+00:05:08,700 --> 00:05:10,820
+Rather than using Debian packaging,
+
+92
+00:05:10,820 --> 00:05:13,640
+Ubuntu Core uses a packaging format called snaps.
+
+93
+00:05:13,640 --> 00:05:17,880
+Snaps are far more robust when it comes to reliable updates and security,
+
+94
+00:05:17,880 --> 00:05:21,560
+both of which are important to IoT devices, including robots.
+
+95
+00:05:21,820 --> 00:05:24,620
+As a result, there is no apt on this system.
+
+96
+00:05:24,620 --> 00:05:27,680
+To give you a taste of what using the snap command is like,
+
+97
+00:05:27,680 --> 00:05:30,980
+let's make sure our system is completely up-to-date by running snap refresh.
+
+98
+00:05:31,580 --> 00:05:33,020
+So: if there is no apt,
+
+99
+00:05:33,020 --> 00:05:35,580
+how are we supposed to install all of our developer tools?
+
+100
+00:05:35,580 --> 00:05:39,580
+Thankfully, there's a special snap exactly for that called "classic"
+
+101
+00:05:39,580 --> 00:05:43,040
+which gives you access to all your familiar tools, including apt.
+
+102
+00:05:43,240 --> 00:05:44,840
+Let's install that now.
+
+103
+00:05:47,060 --> 00:05:48,820
+Alright, it's installed.
+
+104
+00:05:48,820 --> 00:05:53,640
+Using this, we can run "sudo classic" and gain access to a shell where we can install debs,
+
+105
+00:05:53,640 --> 00:05:55,260
+which we'll use for hacking on our robot.
+
+106
+00:05:55,260 --> 00:05:59,100
+Alright, we're now to the point where we can begin following CamJam's worksheets!
+
+107
+00:05:59,100 --> 00:06:01,000
+Let's start with the very first one,
+
+108
+00:06:01,000 --> 00:06:02,500
+linked in the description below.
+
+109
+00:06:02,500 --> 00:06:04,740
+This one assumes you're running Raspbian,
+
+110
+00:06:04,740 --> 00:06:07,680
+which we're not, so while I suggest reading the whole thing
+
+111
+00:06:07,680 --> 00:06:10,260
+for now let's skip straight to the "Writing code" section.
+
+112
+00:06:10,260 --> 00:06:12,820
+First, make sure you're in your classic shell.
+
+113
+00:06:12,820 --> 00:06:15,920
+You'll be able to tell with the "classic" text in your prompt.
+
+114
+00:06:15,920 --> 00:06:17,340
+Following the worksheet,
+
+115
+00:06:17,560 --> 00:06:20,200
+open up a file called 1-helloworld.py.
+
+116
+00:06:20,200 --> 00:06:24,280
+I'm using "vi" here, but you can "sudo apt install nano" if you prefer.
+
+117
+00:06:24,280 --> 00:06:26,360
+Fill this file according to the worksheet,
+
+118
+00:06:26,360 --> 00:06:28,160
+just printing a simple "hello world".
+
+119
+00:06:30,380 --> 00:06:31,860
+Save and exit.
+
+120
+00:06:31,860 --> 00:06:34,140
+For those of you who don't now anything about vi,
+
+121
+00:06:34,160 --> 00:06:37,680
+that's escape, colon, and wq for "write" and "quit".
+
+122
+00:06:37,680 --> 00:06:38,460
+Then press enter.
+
+123
+00:06:38,460 --> 00:06:40,340
+You can now run that code like this...
+
+124
+00:06:40,340 --> 00:06:43,120
+I do suggest going through the rest of that worksheet,
+
+125
+00:06:43,120 --> 00:06:44,580
+it'll be helpful to you later on.
+
+126
+00:06:44,580 --> 00:06:45,720
+That's it for part 1,
+
+127
+00:06:45,720 --> 00:06:48,860
+but I want to assign you some homework before you start part 2:
+
+128
+00:06:49,260 --> 00:06:52,200
+complete worksheets 2, 3, 4, and 7.
+
+129
+00:06:52,200 --> 00:06:53,940
+You can totally do the other ones as well,
+
+130
+00:06:53,940 --> 00:06:59,100
+but we won't be using the ultrasonic sensor or line detector in this series, so you don't have to.
+
+131
+00:06:59,100 --> 00:07:01,460
+Before you do anything with GPIO though,
+
+132
+00:07:01,460 --> 00:07:04,260
+you need to install the RPi.GPIO package.
+
+133
+00:07:04,520 --> 00:07:11,140
+From your classic shell, install gcc, python3-dev, python3-pip, and python3-setuptools.
+
+134
+00:07:11,280 --> 00:07:14,580
+Then run pip3 install RPi.GPIO
+
+135
+00:07:15,380 --> 00:07:16,980
+Aright, now you're set.
+
+136
+00:07:17,120 --> 00:07:18,080
+One last note:
+
+137
+00:07:18,080 --> 00:07:21,720
+anything that uses GPIO is considered privileged on Ubuntu Core,
+
+138
+00:07:21,720 --> 00:07:23,220
+and will need to be run with sudo.
+
+139
+00:07:23,220 --> 00:07:25,380
+Read through the rest of worksheet #1
+
+140
+00:07:25,380 --> 00:07:26,680
+and you'll understand what I mean.
+
+141
+00:07:26,680 --> 00:07:27,660
+In the next part,
+
+142
+00:07:27,660 --> 00:07:31,820
+we'll learn about ROS: what it is, why it's useful, why you need to know it,
+
+143
+00:07:31,820 --> 00:07:34,880
+and how to get it on your Ubuntu-Core-powered Raspberry Pi.
+
+144
+00:07:35,020 --> 00:07:35,900
+See you then.
+
