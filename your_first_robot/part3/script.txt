@@ -1,0 +1,67 @@
+Welcome to Part 3 of our series, where we're talking about creating your first robot with ROS and Ubuntu Core. In part 2, we learned about ROS: what it is, why it's used, and HOW it's used by utilizing it to rewrite one of the CamJam worksheets.
+
+Today we're going to move beyond the CamJam worksheets, and work toward having our robot remotely controlled by focusing on getting data out of our wireless controller and into ROS.
+
+By the way, remember that this is also a blog series. The link is in the description.
+
+I got the controller I'll be using today from the Pi Hut. The link is in the description below, but I've used an Xbox 360 controller successfully as well. I suspect you could get away with using any USB controller you have.
+
+Alright, let's get started!
+
+One of the benefits of using ROS is that a lot of the problems are already solved for us. In this case, there's already a ROS node that exists solely to read data from controllers like ours, called joy. Get into your classic shell, and install it:
+
+Open up two others terminals, and get into your classic shell in each.
+
+In one terminal, run the master.
+
+In another terminal, run the joy node.
+
+In the third terminal, let's take a look at what's coming out of the joy node. First, let's see what topics are available.
+
+The joy node is publishing on the "joy" topic. Let's take a closer look.
+
+Nothing is happening here because my controller is off. But if I turn it on and start moving joysticks and pressing buttons, you can see all sorts of stuff start spewing out.
+
+What you see here is a bunch of Joy messages representing the current state of the controller: joysticks, buttons, everything. Whenever you move a stick or press a button, more messages are sent showing that state change.
+
+Alright, that saves us a lot of work! Go ahead and CTRL+C out of rostopic, the joy node, and roscore, and let's continue.
+
+So we're able to get data out of the controller, but that data is still somewhat raw. Remember that, at the end of the day, the robot moves and turns via changes in its wheel speeds. How do we get from these controller messages to wheel speeds?
+
+We could totally write a new node that subscribes to the controller messages, pulls out the joystick movements, and turns those into wheel speeds. However, that would tightly couple the robot driver to the controller, which would be short-sighted.
+
+A much more generic control method can be found by thinking about how we might make this robot autonomous. This would probably utilize the ROS navigation stack, a link to which is in the description.
+
+The navigation stack was written for arbitrary robots, and outlines exactly how we should control ours with its first hardware requirement:
+
+"[This software] is meant for both differential drive and holonomic wheeled robots only. It assumes that the mobile base is controlled by sending desired velocity commands to achieve in the form of: x velocity, y velocity, theta velocity."
+
+That makes perfect sense, right? Of course not, who the heck knows what "holonomic" means?
+
+Alright, so, our robot is a differential drive robot. That means it can move forward, backward, and turn left and right, all with wheels that don't steer like your car. It does this by rotating the wheels at different speeds, or in different directions. It cannot, however, move side-to-side.
+
+A wheeled holonomic system is a bit more magical in that it can move forward, backward, turn left and right, and move side-to-side. This is done with super cool wheels that I won't discuss here, but they're a google search away if you're interested.
+
+Anyway, the ROS navigation stack supports both of these systems by using commands that are velocities in each of these directions. So let's make our robot support that! Since our system doesn't support Y velocities, we'll just be using X and theta.
+
+ROS has a standard message that is used for exactly this type of data: the Twist message, which consists of a set of linear and angular velocities. Let's turn our Joy messages into Twist messages.
+
+I might sound like a bit of a broken record, but guess what: this already exists, too! Let's install the "teleop_twist_joy" package.
+
+Now open four terminals, all running the classic shell.
+
+In one, run roscore again.
+
+In another, run the joy node again.
+
+In the third, run the newly-installed teleop node:
+
+Finally, in the fourth, let's poke at it. First, take a look at the available topics.
+
+We know that the /joy topic contains the controller data, but /cmd_vel is new. That's the conventional name for the Twist-based velocity commands. Let's take a look at those.
+
+This will by default use your left joystick for velocities. However, you'll probably notice that nothing is happening. That's because the teleop node was written for remote control in mind, and it implements a safety button as a sort of "dead man's switch" if you will. By default, this is button 0, which on my controller is the X button. Hold down that button, and THEN move the left joystick, and you should start seeing velocity commands start scrolling past.
+
+You'll notice that there are several components to this message, but only two of them actually change depending on how you move that joystick: the linear X component, and the angular Z component. This actually relates back to what we discussed in Step 2: X corresponds to the red X line, and Z corresponds to the green theta circle. So X values mean "move forward or backward 'this' fast" and Z values mean "rotate left or right 'this' fast." Perfect!
+
+That's it for part 3. In part 4, we'll actually start making the robot move by rewriting the simple "driver" node we created in part 2 to accept Twist messages and turn them into wheel speeds. See you then.
