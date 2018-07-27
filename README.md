@@ -25,6 +25,10 @@ This repo contains resources related to the snapcraft videos.
   * [Building Rust Snaps with Snapcraft](building_rust_snaps_with_snapcraft)
   * [Your first robot](your_first_robot)
 
+# Dictionaries
+
+You will find common translations for snapcraft terms in the [dictionaries](dictionaries).
+
 # License
 
 The snapcraft videos and related resources are released under a
