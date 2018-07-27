@@ -1,0 +1,11 @@
+Learn about ROS, how to install it on Ubuntu Core, and how to use it to move your robot.
+
+This video is part 2 of a series. It corresponds to
+[this blog post](https://insights.ubuntu.com/2018/01/21/your-first-robot-introduction-to-the-robot-operating-system-2-5/).
+
+Find out more at http://snapcraft.io/
+Subscribe to our YouTube channel: https://youtube.com/snapcraftio
+Follow us on Twitter: http://twitter.com/snapcraft.io
+See our updates on G+: https://plus.google.com/+snapcraftio
+Discuss this on our forums: http://forum.snapcraft.io
+Get updates via Telegram: https://t.me/snapcraftio

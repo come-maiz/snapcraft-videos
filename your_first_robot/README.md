@@ -7,3 +7,9 @@
 * Translations:
   * Spanish:
     [Post](part1/post-es.md)
+
+# Part 2: Introduction to the Robot Operating System
+
+- [Video](https://youtu.be/Sw33EbZHris)
+- [Description](part2/description.txt)
+- [Script](part2/script.txt)

@@ -1,0 +1,101 @@
+Welcome to Part 2 of our series, where we're talking about creating your first robot with ROS and Ubuntu Core. In part 1, we discussed all the hardware necessary to follow this series, and introduced Ubuntu Core, the operating system for IoT devices.
+
+Today, I'm going to introduce you to the Robot Operating System (or "ROS"), and we'll use it to move our robot. We'll be using ROS throughout the rest of the series.
+
+By the way, remember that this is also a blog series. The link is in the description.
+
+
+So what is the Robot Operating System? Well, at its simplest, ROS is a set of open-source libraries and tools meant to ease development of robots. It also provides an infrastructure for connecting various robotic components together.
+
+In the CamJam worksheets, we've been doing everything in a single script: controlling the motors, reading from senors, etc. It gets more complicated every time we add something, and changes become harder to make.
+
+ROS provides a communication infrastructure that allows you to extract different logic into their own modules, and have them communicate with each other in a standard way, making changes easy.
+
+This will make more sense once we dive in, so let's get started!
+
+The first step is to install ROS on our Raspberry Pi. There are a number of supported ROS releases, but we're going to use the long-term-support release, called Kinetic.
+
+Let's SSH into our Pi, and get into our classic shell.
+    
+Kinetic's installation guide, which we're following here, is linked in the description.
+
+ROS maintains their own Debian repository, which we'll need to add to our system:
+    
+Now we'll re-index all the repositories we have configured, since we just added one.
+    
+Now let's install ROS. As you see in the install guide, there are a bunch of options here. Let's install the smallest, most bare-bones one: ros-kinetic-ros-base, which will take up around 700MB. We're also going to install g++, which is still required, even though we're writing Python.
+    
+At this point, ROS is successfully installed, but none of its tools are available to run. That's because ROS installs itself into what it calls a "workspace", and provides a shell script that activates that workspace. We can make sure we activate that workspace upon login by adding it to the .bashrc file in our home directory.
+
+Alright, now it's time to get to know ROS. One of the reasons I like ROS so much (and, I think, one of the reasons it's so popular) is that their introductory documentation is fantastic. They have a phenomenal set of tutorials linked in the description that take you from knowing absolutely nothing to feeling more or less comfortable with the entire system. Each one is easily digestible in a few minutes.
+
+Because they are so good, rather than try and duplicate their hard work here, take a few minutes now to start at the beginning and go through them at least until you complete #13, "Examining the Simple Publisher and Subscriber".
+
+You'll notice that there are two parallel tutorial tracks, one that uses C++ and one that uses Python. We'll be using Python through this series, so you don't need to worry about the C++ ones unless they interest you.
+
+Come back here when you're done, and we'll continue.
+
+Now that we've gained some familiarity with ROS, it's almost time to make our robot move using it. However, there's something we need to do first. Back in CamJam worksheet #1, they mention that:
+
+"When the Raspberry Pi was first released, some of the important Python libraries were only available for Python 2.7. However, almost every library, and all the ones used in these worksheets, are available for Python 3.2. It has been decided that all code for this EduKit will be developed for Python 3.2."
+
+Unfortunately the Python bindings for ROS are only officially supported on Python 2, so we need to use Python 2 from now on instead of Python 3. Don't worry, all the code from the worksheets should still work, but it means we need to install the Python 2 version of RPi.GPIO.
+
+Alright, let's have some fun! We're going to rewrite the code we wrote for the CamJam Worksheet #7 using ROS. We'll add some message handling to it, so, using ROS, we can command the robot to move forward, turn left, turn right, and so on.
+
+The first step is to create a new workspace. You learned how to do this in the first ROS tutorial. I'm calling mine "edukit_bot_ws", which stands for workspace. If you call yours something else remember to change the directions accordingly.
+    
+Now let's create a new package in that workspace. I'll call mine "edukit_bot", and it has three dependencies: rospy (the Python bindings for ROS), std_msgs (the standard ROS messages, e.g. numbers, strings, etc.), and python-rpi.gpio (RPi.GPIO, which we use for GPIO access).
+
+Alright-- time to write some code. Take the code you wrote for worksheet #7, and create a copy of it named "driver_node" in the ROS package's src/ directory
+    
+The CamJam worksheets don't discuss this, but if we set the script to be executable, we can run it directly instead of calling Python first.
+
+Now open the driver node in your text editor. I'm using vi, here.
+
+This is, of course, worksheet #7. Let's morph it a little.
+
+First of all, since this file is directly executable, we need to add a shebang to define the interpreter that will execute this program. Here, we're telling it that it needs the python command.
+
+Now we're going to import rospy, which includes the ROS python bindings.
+
+We also import the String message from the ROS std_msgs package. We'll use both of these in a minute.
+
+We'll keep most of this, so let's skip straight to the bottom.
+
+Rather than just go through a cycle of moves and then exit, let's remove this behavior at the end and add some ROS code.
+
+First, we'll initialize the ROS node with the name "driver."
+
+Then we'll subscribe to a String message on the 'command' topic. We're providing the "CommandCallback" function as the callback function, which we'll define in a second.
+
+Finally, we say "just sit here and spin, and process messages." This call will block until the node is asked to exit, like if you ctrl+c it.
+
+At that moment, it needs to stop the motors and clean up GPIO.
+
+That's pretty simple, so let's write that CommandCallback function.
+
+Now this function needs to handle a String message. We need to take a look at the data in the message (which is the string itself), and take action appropriately.
+
+If the string is the word "forwards" it needs to move the robot forward by calling the Forwards function from the worksheet. Similarly, if the word is "left" it needs to turn the robot left by calling the Left function. And you get the idea.
+
+Now, if the command isn't recognized, the function needs to stop the robot.
+
+Okay, save and exit.
+
+Let's build this workspace, now.
+
+At this point, we have a ROS node created that will drive our robot as requested in a "command" message. It uses GPIO though, which still requires sudo. Instead of trying to get our workspace working using sudo, let's cheat, and temporarily change the permissions of GPIO so that we don't need sudo (note that this will be reset upon reboot):
+
+Alright, let's test that out. You'll need to open three terminals for this, each one SSHd into the Pi and running the classic shell.
+
+First of all, we need the ROS master, otherwise publishers and subscribers can't find each other. So in one terminal, run roscore.
+    
+In another terminal, we'll need to activate our newly-built workspace, and run our "driver" node.
+
+Finally, in the third terminal, we can start giving our commands to make the robot move. Notice that the "command" topic is present.
+    
+Alright, let's give it some commands.
+
+Congratulations, you're quickly learning ROS! That's it for part 2. In part 3, we'll break free of the CamJam worksheets and strike out on our own. We'll introduce the wireless controller, and begin working on making our robot remotely-controlled using ROS. See you then.
+
