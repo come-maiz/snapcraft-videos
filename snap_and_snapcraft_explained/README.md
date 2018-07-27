@@ -4,5 +4,6 @@
  * [Description](description.txt)
  * [Subtitles](subtitles.srt)
  * Translations:
-
-   * [Spanish subtitles](subtitles-es.srt)
+   * Spanish:
+     * [Description](description-es.srt)
+     * [Subtitles](subtitles-es.srt)
