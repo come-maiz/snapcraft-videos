@@ -11,10 +11,13 @@
 
 # Part 2: Introduction to the Robot Operating System
 
-- [Video](https://youtu.be/Sw33EbZHris)
-- [Description](part2/description.txt)
-- [Script](part2/script.txt)
-
+* [Post](part2/post.md)
+* [Video](https://youtu.be/Sw33EbZHris)
+* [Description](part2/description.txt)
+* [Script](part2/script.txt)
+* Translations:
+  * Spanish:
+    [Post](part2/post-es.md)
 
 # Part 3: The controller
 
