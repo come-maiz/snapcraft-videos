@@ -18,6 +18,10 @@
 
 # Part 3: The controller
 
-- [Video](https://youtu.be/xRK-tOgzeUo)
-- [Description](part3/description.txt)
-- [Script](part3/script.txt)
+* [Post](part3/post.md)
+* [Video](https://youtu.be/xRK-tOgzeUo)
+* [Description](part3/description.txt)
+* [Script](part3/script.txt)
+* Translations:
+  * Spanish:
+    [Post](part3/post-es.md)
